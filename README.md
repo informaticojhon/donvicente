@@ -91,12 +91,4 @@ Sitio web institucional para **Don Vicente**, empresa de servicios integrales en
 5. **Contacto** (`/contacto`) - Información de contacto + mapa
 6. **FAQ** (`/faq`) - Preguntas frecuentes
 
-## 📧 Contacto (Placeholder)
-
-- 📞 **Teléfono**: +56 9 1234 5678
-- 📧 **Email**: contacto@donvicente.cl
-- 📍 **Dirección**: Melinka, Región de Aysén, Chile
-
 ---
-
-**Nota**: Este proyecto está listo para desarrollo. Completar los datos reales antes del despliegue en producción.
