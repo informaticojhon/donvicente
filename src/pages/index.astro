@@ -1,0 +1,660 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroSlider from "../components/HeroSlider.astro";
+---
+
+<BaseLayout
+  title="Don Vicente - Servicios Acuícolas y Transporte en Melinka, Aysén"
+  description="Servicios especializados para la industria acuícola en Melinka y Aysén: transporte de personal, aseo industrial, control de plagas MINSAL y operarios. Más de 10 años sirviendo al sector pesquero."
+>
+  <!-- Hero principal mejorado -->
+  <HeroSlider />
+
+  <!-- Servicios Principales Mejorados -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title text-center mb-4">Nuestros Servicios</h2>
+      <p class="section-subtitle text-center mb-16">
+        Soluciones completas para tu negocio
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto stagger-grid">
+        <!-- Transporte -->
+        <div
+          class="glass-card p-8 text-center card-tilt group hover:shadow-2xl transition-all duration-300"
+        >
+          <div
+            class="w-full h-48 mb-6 overflow-hidden rounded-2xl group-hover:scale-105 transition-transform duration-500 shadow-lg"
+          >
+            <img
+              src="/images/carga.jpg"
+              alt="Transporte de Carga y Personal"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <h3 class="text-2xl font-bold text-dv-primary mb-3">Transporte</h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Traslado seguro de personal y carga en zonas urbanas y rurales del
+            sur de Chile.
+          </p>
+          <ul class="text-sm text-left text-gray-600 space-y-2 mb-6">
+            <li class="flex items-center gap-2">
+              <span class="text-blue-600">✓</span> Transporte de personal
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-blue-600">✓</span> Carga y logística
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-blue-600">✓</span> Servicio puntual
+            </li>
+          </ul>
+          <a
+            href="/servicios"
+            class="text-dv-primary font-semibold hover:text-dv-secondary transition-colors inline-flex items-center gap-2"
+          >
+            Ver más
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Aseo Industrial -->
+        <div
+          class="glass-card p-8 text-center card-tilt group hover:shadow-2xl transition-all duration-300"
+        >
+          <div
+            class="w-full h-48 mb-6 overflow-hidden rounded-2xl shadow-lg"
+          >
+            <img
+              src="/images/aseo.jpg"
+              alt="Servicio de Aseo Industrial"
+              class="w-full h-full object-cover img-zoom"
+            />
+          </div>
+          <h3 class="text-2xl font-bold text-dv-primary mb-3">
+            Aseo Industrial
+          </h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Limpieza profunda y profesional para empresas, instituciones y
+            espacios comerciales.
+          </p>
+          <ul class="text-sm text-left text-gray-600 space-y-2 mb-6">
+            <li class="flex items-center gap-2">
+              <span class="text-green-600">✓</span> Limpieza institucional
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-green-600">✓</span> Equipos certificados
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-green-600">✓</span> Personal capacitado
+            </li>
+          </ul>
+          <a
+            href="/servicios"
+            class="text-dv-primary font-semibold hover:text-dv-secondary transition-colors inline-flex items-center gap-2"
+          >
+            Ver más
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Control de Plagas -->
+        <div
+          class="glass-card p-8 text-center card-tilt group hover:shadow-2xl transition-all duration-300"
+        >
+          <div
+            class="w-full h-48 mb-6 overflow-hidden rounded-2xl shadow-lg relative"
+          >
+            <img
+              src="/images/cplagas.jpg"
+              alt="Control de Plagas Certificado"
+              class="w-full h-full object-cover img-zoom"
+            />
+            <!-- Badge MINSAL -->
+            <div
+              class="absolute top-2 right-2 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full shadow-lg z-10"
+            >
+              MINSAL
+            </div>
+          </div>
+          <h3 class="text-2xl font-bold text-dv-primary mb-3">
+            Control de Plagas
+          </h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Soluciones efectivas y certificadas para eliminación y prevención de
+            plagas.
+          </p>
+          <ul class="text-sm text-left text-gray-600 space-y-2 mb-6">
+            <li class="flex items-center gap-2">
+              <span class="text-red-600">✓</span> Certificación MINSAL
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-red-600">✓</span> Métodos seguros
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-red-600">✓</span> Prevención continua
+            </li>
+          </ul>
+          <a
+            href="/servicios"
+            class="text-dv-primary font-semibold hover:text-dv-secondary transition-colors inline-flex items-center gap-2"
+          >
+            Ver más
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sectores que Atendemos -->
+  <section class="py-20">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title mb-4 scroll-reveal">Sectores que Atendemos</h2>
+      <p class="section-subtitle mb-16 scroll-reveal">
+        Experiencia multisectorial en toda la región
+      </p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto stagger-grid">
+        <!-- Pesca y Acuicultura -->
+        <div class="glass-card group scale-in">
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center text-4xl shadow-lg pulse-scale"
+            >
+              🏭
+            </div>
+            <h3 class="text-xl font-bold text-dv-primary">
+              Pesca y Acuicultura
+            </h3>
+          </div>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            Servicios especializados para empresas pesqueras y plantas
+            procesadoras.
+          </p>
+        </div>
+
+        <!-- Educación -->
+        <div
+          class="glass-card group scale-in"
+        >
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-xl flex items-center justify-center text-4xl shadow-lg pulse-scale"
+            >
+              🏫
+            </div>
+            <h3 class="text-xl font-bold text-dv-primary">Educación</h3>
+          </div>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            Servicios de control de plagas.
+          </p>
+        </div>
+
+        <!-- Empresas Privadas -->
+        <div
+          class="glass-card group scale-in"
+        >
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-xl flex items-center justify-center text-4xl shadow-lg pulse-scale"
+            >
+              🏢
+            </div>
+            <h3 class="text-xl font-bold text-dv-primary">Empresas Privadas</h3>
+          </div>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            Soluciones integrales para comercio y servicios.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿Por qué elegirnos? -->
+  <section class="py-24 bg-gradient-to-b from-blue-50/30 to-transparent">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title scroll-reveal">¿Por qué elegirnos?</h2>
+      <p class="section-subtitle scroll-reveal">
+        La experiencia y calidad que tu empresa necesita
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-10 stagger-grid">
+        <div class="glass-card group card-tilt">
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center shadow-lg rotate-in"
+            >
+              <svg
+                class="w-7 h-7 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-dv-primary">Confianza</h3>
+          </div>
+          <p class="text-gray-700 leading-relaxed">
+            Somos reconocidos por nuestra seriedad y compromiso en cada
+            servicio.
+          </p>
+        </div>
+        <div
+          class="glass-card group card-tilt"
+        >
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-700 rounded-xl flex items-center justify-center shadow-lg rotate-in"
+            >
+              <svg
+                class="w-7 h-7 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-dv-primary">Experiencia</h3>
+          </div>
+          <p class="text-gray-700 leading-relaxed">
+            Más de 10 años prestando soluciones eficientes a empresas e
+            instituciones.
+          </p>
+        </div>
+        <div
+          class="glass-card group card-tilt"
+        >
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              class="w-14 h-14 bg-gradient-to-br from-red-500 to-red-700 rounded-xl flex items-center justify-center shadow-lg rotate-in"
+            >
+              <svg
+                class="w-7 h-7 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-dv-primary">
+              Personal Capacitado
+            </h3>
+          </div>
+          <p class="text-gray-700 leading-relaxed">
+            Contamos con equipos entrenados y comprometidos para cada área de
+            trabajo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Presencia Regional -->
+  <section class="py-20 bg-gradient-to-b from-transparent to-blue-50/30">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title mb-4">Presencia Regional</h2>
+      <p class="section-subtitle mb-16">Servicios en toda la Región de Aysén</p>
+
+      <div class="max-w-5xl mx-auto">
+        <div class="glass-card scroll-reveal">
+          <div class="text-center mb-8">
+            <div class="text-8xl mb-4 float-element">🗺️</div>
+            <h3 class="text-2xl font-bold text-dv-primary mb-2">
+              Cobertura Regional Completa
+            </h3>
+            <p class="text-gray-700">
+              Operamos desde Melinka hacia toda la Región de Aysén
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6 mb-8 stagger-grid">
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-dv-primary to-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 text-white text-2xl font-bold shadow-lg pulse-scale"
+              >
+                📍
+              </div>
+              <h4 class="font-bold text-dv-primary mb-1">Base Principal</h4>
+              <p class="text-sm text-gray-700">Melinka</p>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center mx-auto mb-3 text-white text-2xl font-bold shadow-lg"
+              >
+                <span class="counter" data-target="5" data-duration="2">0</span>+
+              </div>
+              <h4 class="font-bold text-dv-primary mb-1">Comunas</h4>
+              <p class="text-sm text-gray-700">Atendidas</p>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-dv-secondary to-red-600 rounded-full flex items-center justify-center mx-auto mb-3 text-white text-2xl font-bold shadow-lg"
+              >
+                <span class="counter" data-target="100" data-duration="2">0</span>%
+              </div>
+              <h4 class="font-bold text-dv-primary mb-1">Cobertura</h4>
+              <p class="text-sm text-gray-700">Regional</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo Trabajamos -->
+  <section class="py-24">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title scroll-reveal">¿Cómo Trabajamos?</h2>
+      <p class="section-subtitle scroll-reveal">
+        Nuestro proceso garantiza calidad y eficiencia en cada etapa
+      </p>
+
+      <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto stagger-grid">
+        <!-- Step 1 -->
+        <div class="relative">
+          <div class="glass-card text-center group card-tilt">
+            <div
+              class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-dv-primary to-dv-secondary rounded-full flex items-center justify-center text-white text-3xl font-extrabold shadow-xl pulse-scale"
+            >
+              1
+            </div>
+            <h3 class="text-lg font-bold text-dv-primary mb-3">Contacto</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Nos cuentas tu necesidad por teléfono, WhatsApp o email
+            </p>
+          </div>
+          <!-- Flecha conectora (solo desktop) -->
+          <div
+            class="hidden md:block absolute top-10 -right-4 text-dv-primary text-4xl font-bold opacity-30"
+          >
+            →
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="relative scroll-reveal" style="animation-delay: 0.1s;">
+          <div class="glass-card text-center group">
+            <div
+              class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-dv-primary to-dv-secondary rounded-full flex items-center justify-center text-white text-3xl font-extrabold shadow-xl group-hover:scale-110 group-hover:rotate-12 transition-all"
+            >
+              2
+            </div>
+            <h3 class="text-lg font-bold text-dv-primary mb-3">Evaluación</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Analizamos tu requerimiento y elaboramos una propuesta
+              personalizada
+            </p>
+          </div>
+          <div
+            class="hidden md:block absolute top-10 -right-4 text-dv-primary text-4xl font-bold opacity-30"
+          >
+            →
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="relative scroll-reveal" style="animation-delay: 0.2s;">
+          <div class="glass-card text-center group">
+            <div
+              class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-dv-primary to-dv-secondary rounded-full flex items-center justify-center text-white text-3xl font-extrabold shadow-xl group-hover:scale-110 group-hover:rotate-12 transition-all"
+            >
+              3
+            </div>
+            <h3 class="text-lg font-bold text-dv-primary mb-3">Ejecución</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Realizamos el servicio con personal capacitado y equipos de
+              calidad
+            </p>
+          </div>
+          <div
+            class="hidden md:block absolute top-10 -right-4 text-dv-primary text-4xl font-bold opacity-30"
+          >
+            →
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="relative scroll-reveal" style="animation-delay: 0.3s;">
+          <div class="glass-card text-center group">
+            <div
+              class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-dv-primary to-dv-secondary rounded-full flex items-center justify-center text-white text-3xl font-extrabold shadow-xl group-hover:scale-110 group-hover:rotate-12 transition-all"
+            >
+              4
+            </div>
+            <h3 class="text-lg font-bold text-dv-primary mb-3">Seguimiento</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Verificamos tu satisfacción y mantenemos el compromiso a largo
+              plazo
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-16">
+        <a
+          href="/contacto"
+          class="btn-primary inline-flex items-center gap-3 shadow-2xl"
+        >
+          <span>Comenzar Ahora</span>
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final Mejorado -->
+  <section class="py-20 relative overflow-hidden">
+    <!-- Fondo con gradiente -->
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-dv-primary/10 via-blue-500/10 to-dv-secondary/10 -z-10"
+    >
+    </div>
+
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto glass-card text-center scroll-reveal">
+        <div class="text-5xl mb-6 float-element">🚀</div>
+        <h2 class="text-3xl md:text-5xl font-bold text-dv-primary mb-6">
+          ¿Listo para comenzar?
+        </h2>
+        <p
+          class="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed max-w-2xl mx-auto"
+        >
+          Solicita tu <span class="font-semibold text-dv-primary"
+            >cotización gratuita</span
+          > y descubre cómo podemos ayudar a tu empresa con soluciones profesionales
+          y confiables.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <a
+            href="/contacto"
+            class="btn-primary inline-flex items-center justify-center gap-3 text-lg px-10 py-5 btn-magnetic ripple-effect"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              ></path>
+            </svg>
+            <span>Solicitar Cotización</span>
+          </a>
+          <a
+            href="tel:+56912345678"
+            class="px-10 py-5 rounded-xl font-semibold glass hover:bg-white/90 text-dv-primary transition-all duration-300 hover:scale-105 hover:shadow-2xl inline-flex items-center justify-center gap-3 text-lg"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              ></path>
+            </svg>
+            <span>Llamar Ahora</span>
+          </a>
+        </div>
+
+        <div class="border-t border-gray-200 pt-6 mt-6">
+          <p class="text-sm text-gray-600 mb-4">O contáctanos directamente:</p>
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm"
+          >
+            <a
+              href="tel:+56912345678"
+              class="flex items-center gap-2 text-dv-primary hover:text-dv-secondary transition-colors"
+            >
+              <span>📞</span>
+              <span>+56 9 1234 5678</span>
+            </a>
+            <a
+              href="mailto:contacto@donvicente.cl"
+              class="flex items-center gap-2 text-dv-primary hover:text-dv-secondary transition-colors"
+            >
+              <span>✉️</span>
+              <span>contacto@donvicente.cl</span>
+            </a>
+            <a
+              href="https://wa.me/56912345678"
+              target="_blank"
+              class="flex items-center gap-2 text-dv-primary hover:text-dv-secondary transition-colors"
+            >
+              <span>💬</span>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Scroll Reveal Animation
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document
+    .querySelectorAll(".scroll-reveal")
+    .forEach((el) => observer.observe(el));
+
+  // Counter Animation
+  const animateCounter = (element: HTMLElement) => {
+    const target = parseInt(element.getAttribute("data-target") || "0");
+    const duration = 2000;
+    const increment = target / (duration / 16);
+    let current = 0;
+
+    const updateCounter = () => {
+      current += increment;
+      if (current < target) {
+        element.textContent = Math.floor(current).toString();
+        requestAnimationFrame(updateCounter);
+      } else {
+        element.textContent = target.toString();
+      }
+    };
+
+    updateCounter();
+  };
+
+  const counterObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const counter = entry.target as HTMLElement;
+          animateCounter(counter);
+          counterObserver.unobserve(counter);
+        }
+      });
+    },
+    { threshold: 0.5 },
+  );
+
+  document
+    .querySelectorAll(".counter")
+    .forEach((el) => counterObserver.observe(el));
+</script>

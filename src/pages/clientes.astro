@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Nuestros Clientes - Don Vicente"
+  description="Empresas e instituciones del sur de Chile confían en Don Vicente. Conoce los sectores a los que prestamos servicios."
+>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden min-h-[50vh] flex items-center mb-16">
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-red-500/10 -z-10"></div>
+    <div class="absolute top-10 right-10 w-64 h-64 bg-blue-400/20 rounded-full blur-3xl -z-10"></div>
+    
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-dv-primary via-blue-600 to-dv-primary mb-6 tracking-tight leading-tight animate-fade-in">
+        Nuestros Clientes
+      </h1>
+      
+      <p class="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed animate-fade-in animate-delay-200">
+        Empresas e instituciones que <span class="font-semibold text-dv-primary">confían en nuestra experiencia</span> y profesionalismo
+      </p>
+    </div>
+  </section>
+
+  <!-- Sectores que Confían en Nosotros -->
+  <section class="py-20">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title mb-4">Sectores que Confían en Nosotros</h2>
+      <p class="section-subtitle mb-16">Experiencia multisectorial en toda la región de Aysén</p>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12">
+          <!-- Pesca y Acuicultura -->
+          <div class="glass-card text-center scroll-reveal group hover:shadow-2xl transition-all duration-500 cursor-pointer">
+            <div class="w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 p-4">
+              <img src="/pesca_acuicultura_icon_1764070135738.png" alt="Pesca y Acuicultura" class="w-full h-full object-contain" />
+            </div>
+            <h3 class="text-xl font-bold text-dv-primary mb-3 group-hover:text-blue-600 transition-colors">Pesca y Acuicultura</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">Empresas pesqueras y plantas procesadoras de la región</p>
+          </div>
+
+          <!-- Sector Público -->
+          <div class="glass-card text-center scroll-reveal group hover:shadow-2xl transition-all duration-500 cursor-pointer" style="animation-delay: 0.1s;">
+            <div class="w-24 h-24 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 p-4">
+              <img src="/sector_publico_icon_1764070149280.png" alt="Sector Público" class="w-full h-full object-contain" />
+            </div>
+            <h3 class="text-xl font-bold text-dv-primary mb-3 group-hover:text-purple-600 transition-colors">Sector Público</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">Municipalidades y servicios públicos de Aysén</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-20 bg-gradient-to-b from-transparent to-blue-50/30">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl mx-auto glass-card text-center scroll-reveal">
+        <div class="text-5xl mb-6">🤝</div>
+        <h2 class="text-3xl md:text-4xl font-bold text-dv-primary mb-4">
+          ¿Quieres ser parte de nuestros clientes?
+        </h2>
+        <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+          Únete a las empresas que confían en Don Vicente para sus operaciones diarias.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contacto" class="btn-primary inline-flex items-center justify-center gap-3">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            <span>Solicitar Cotización</span>
+          </a>
+          <a href="/servicios" class="px-8 py-4 rounded-xl font-semibold glass hover:bg-white/90 text-dv-primary transition-all duration-300 hover:scale-105 hover:shadow-2xl inline-flex items-center justify-center gap-3">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+            </svg>
+            <span>Ver Servicios</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Scroll Reveal Animation
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+</script>

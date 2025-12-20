@@ -1,0 +1,296 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Guía Rápida de Animaciones - Don Vicente"
+  description="Guía visual simple de qué animaciones usar y dónde"
+>
+  <div class="container mx-auto px-6 py-12">
+    <div class="max-w-5xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16 scroll-reveal">
+        <h1 class="text-5xl font-bold text-dv-primary mb-4">
+          🎨 Guía Rápida de Animaciones
+        </h1>
+        <p class="text-xl text-gray-700">
+          Aprende qué animación usar y cuándo
+        </p>
+      </div>
+
+      <!-- Tabla de Referencia Rápida -->
+      <div class="glass-card mb-12 scroll-reveal">
+        <h2 class="text-3xl font-bold text-dv-primary mb-6">📋 Cheat Sheet</h2>
+        
+        <div class="overflow-x-auto">
+          <table class="w-full text-left">
+            <thead class="bg-dv-primary/10">
+              <tr>
+                <th class="px-4 py-3 font-bold text-dv-primary">Clase CSS</th>
+                <th class="px-4 py-3 font-bold text-dv-primary">Cuándo Usar</th>
+                <th class="px-4 py-3 font-bold text-dv-primary">Ejemplo</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="px-4 py-3"><code class="bg-gray-100 px-2 py-1 rounded text-sm">.scroll-reveal</code></td>
+                <td class="px-4 py-3">Títulos, párrafos, cualquier contenido general</td>
+                <td class="px-4 py-3 text-sm text-gray-600">Secciones, headers</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3"><code class="bg-gray-100 px-2 py-1 rounded text-sm">.stagger-grid</code></td>
+                <td class="px-4 py-3">Grid de tarjetas, servicios, productos</td>
+                <td class="px-4 py-3 text-sm text-gray-600">Grid de 3 servicios</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3"><code class="bg-gray-100 px-2 py-1 rounded text-sm">.card-tilt</code></td>
+                <td class="px-4 py-3">Tarjetas importantes que quieres destacar</td>
+                <td class="px-4 py-3 text-sm text-gray-600">Cards de "Por qué elegirnos"</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3"><code class="bg-gray-100 px-2 py-1 rounded text-sm">.img-zoom</code></td>
+                <td class="px-4 py-3">Imágenes dentro de tarjetas o galerías</td>
+                <td class="px-4 py-3 text-sm text-gray-600">Fotos de servicios</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3"><code class="bg-gray-100 px-2 py-1 rounded text-sm">.counter</code></td>
+                <td class="px-4 py-3">Estadísticas, números importantes</td>
+                <td class="px-4 py-3 text-sm text-gray-600">Años experiencia, clientes</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3"><code class="bg-gray-100 px-2 py-1 rounded text-sm">.btn-magnetic</code></td>
+                <td class="px-4 py-3">Botones CTA principales</td>
+                <td class="px-4 py-3 text-sm text-gray-600">Botón "Contactar"</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3"><code class="bg-gray-100 px-2 py-1 rounded text-sm">.float-element</code></td>
+                <td class="px-4 py-3">Emojis, iconos decorativos</td>
+                <td class="px-4 py-3 text-sm text-gray-600">Emoji de cohete 🚀</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3"><code class="bg-gray-100 px-2 py-1 rounded text-sm">.pulse-scale</code></td>
+                <td class="px-4 py-3">Iconos importantes que quieres que llamen la atención</td>
+                <td class="px-4 py-3 text-sm text-gray-600">Iconos en tarjetas</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3"><code class="bg-gray-100 px-2 py-1 rounded text-sm">.scale-in</code></td>
+                <td class="px-4 py-3">Tarjetas o elementos con impacto visual</td>
+                <td class="px-4 py-3 text-sm text-gray-600">Sectores que atendemos</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3"><code class="bg-gray-100 px-2 py-1 rounded text-sm">.rotate-in</code></td>
+                <td class="px-4 py-3">Íconos en tarjetas de características</td>
+                <td class="px-4 py-3 text-sm text-gray-600">Íconos de ventajas</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Ejemplos por Sección -->
+      <div class="space-y-12">
+        <!-- Hero -->
+        <div class="glass-card scroll-reveal">
+          <h3 class="text-2xl font-bold text-dv-primary mb-4 flex items-center gap-2">
+            <span>🎯</span> Hero / Banner Principal
+          </h3>
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <p class="mb-2 font-semibold">Ya está implementado con GSAP en HeroSlider</p>
+            <p class="text-sm text-gray-600">✓ Transiciones automáticas suaves</p>
+            <p class="text-sm text-gray-600">✓ Animaciones en cada cambio de slide</p>
+          </div>
+        </div>
+
+        <!-- Servicios -->
+        <div class="glass-card scroll-reveal">
+          <h3 class="text-2xl font-bold text-dv-primary mb-4 flex items-center gap-2">
+            <span>💼</span> Grid de Servicios
+          </h3>
+          <div class="bg-gray-50 p-4 rounded-lg mb-4">
+            <pre class="text-sm overflow-x-auto"><code>&lt;div class="<span class="text-blue-600">stagger-grid</span> grid md:grid-cols-3 gap-6"&gt;
+  &lt;div class="glass-card <span class="text-green-600">card-tilt</span>"&gt;
+    &lt;div class="overflow-hidden rounded-lg"&gt;
+      &lt;img src="imagen.jpg" class="<span class="text-purple-600">img-zoom</span>" /&gt;
+    &lt;/div&gt;
+    &lt;h3&gt;Servicio 1&lt;/h3&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+          <p class="text-sm text-gray-600">
+            <strong>Resultado:</strong> Las tarjetas aparecen una por una, tienen efecto 3D al pasar el mouse, y las imágenes hacen zoom.
+          </p>
+        </div>
+
+        <!-- Estadísticas -->
+        <div class="glass-card scroll-reveal">
+          <h3 class="text-2xl font-bold text-dv-primary mb-4 flex items-center gap-2">
+            <span>📊</span> Números / Estadísticas
+          </h3>
+          <div class="bg-gray-50 p-4 rounded-lg mb-4">
+            <pre class="text-sm overflow-x-auto"><code>&lt;div class="text-5xl font-bold"&gt;
+  &lt;span class="<span class="text-blue-600">counter</span>" 
+        data-target="<span class="text-green-600">150</span>" 
+        data-duration="<span class="text-purple-600">2</span>"&gt;0&lt;/span&gt;+
+&lt;/div&gt;
+&lt;p&gt;Clientes Satisfechos&lt;/p&gt;</code></pre>
+          </div>
+          <p class="text-sm text-gray-600">
+            <strong>Resultado:</strong> El número anima de 0 a 150 en 2 segundos cuando el usuario hace scroll.
+          </p>
+          <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+            <p class="text-sm"><strong>Demo en vivo:</strong></p>
+            <div class="text-4xl font-bold text-dv-primary mt-2">
+              <span class="counter" data-target="100" data-duration="2">0</span>+
+            </div>
+            <p class="text-sm text-gray-600 mt-1">Proyectos completados</p>
+          </div>
+        </div>
+
+        <!-- Botones CTA -->
+        <div class="glass-card scroll-reveal">
+          <h3 class="text-2xl font-bold text-dv-primary mb-4 flex items-center gap-2">
+            <span>🔘</span> Botones Call-to-Action
+          </h3>
+          <div class="bg-gray-50 p-4 rounded-lg mb-4">
+            <pre class="text-sm overflow-x-auto"><code>&lt;a href="/contacto" 
+   class="btn-primary <span class="text-blue-600">btn-magnetic</span> <span class="text-green-600">ripple-effect</span>"&gt;
+  Contactar Ahora
+&lt;/a&gt;</code></pre>
+          </div>
+          <p class="text-sm text-gray-600 mb-4">
+            <strong>Resultado:</strong> El botón "atrae" el cursor y crea un efecto de onda al hacer click.
+          </p>
+          <div class="flex gap-4">
+            <button class="btn-primary btn-magnetic ripple-effect">
+              Pruébame - Pasa el mouse
+            </button>
+          </div>
+        </div>
+
+        <!-- Iconos Decorativos -->
+        <div class="glass-card scroll-reveal">
+          <h3 class="text-2xl font-bold text-dv-primary mb-4 flex items-center gap-2">
+            <span>✨</span> Elementos Decorativos
+          </h3>
+          <div class="bg-gray-50 p-4 rounded-lg mb-4">
+            <pre class="text-sm overflow-x-auto"><code>&lt;!-- Icono flotante --&gt;
+&lt;div class="text-6xl <span class="text-blue-600">float-element</span>"&gt;🚀&lt;/div&gt;
+
+&lt;!-- Icono que pulsa --&gt;
+&lt;div class="text-4xl <span class="text-green-600">pulse-scale</span>"&gt;⚡&lt;/div&gt;</code></pre>
+          </div>
+          <div class="flex gap-8 justify-center items-center p-6">
+            <div class="text-6xl float-element">🚀</div>
+            <div class="text-6xl pulse-scale">⚡</div>
+            <div class="text-6xl float-element">💡</div>
+          </div>
+        </div>
+
+        <!-- Títulos y Textos -->
+        <div class="glass-card scroll-reveal">
+          <h3 class="text-2xl font-bold text-dv-primary mb-4 flex items-center gap-2">
+            <span>📝</span> Títulos y Párrafos
+          </h3>
+          <div class="bg-gray-50 p-4 rounded-lg mb-4">
+            <pre class="text-sm overflow-x-auto"><code>&lt;h2 class="<span class="text-blue-600">scroll-reveal</span>"&gt;Nuestros Servicios&lt;/h2&gt;
+&lt;p class="<span class="text-blue-600">scroll-reveal</span>"&gt;Descripción...&lt;/p&gt;
+
+&lt;!-- Para efectos de lado --&gt;
+&lt;div class="<span class="text-green-600">slide-left</span>"&gt;Desde izquierda&lt;/div&gt;
+&lt;div class="<span class="text-purple-600">slide-right</span>"&gt;Desde derecha&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <!-- Reglas de Oro -->
+        <div class="glass-card scroll-reveal bg-gradient-to-br from-yellow-50 to-orange-50">
+          <h3 class="text-2xl font-bold text-dv-primary mb-4 flex items-center gap-2">
+            <span>⭐</span> Reglas de Oro
+          </h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">1️⃣</span>
+              <div>
+                <strong>Usa `.stagger-grid` en grids</strong>
+                <p class="text-sm text-gray-600">Para que las tarjetas aparezcan una por una</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">2️⃣</span>
+              <div>
+                <strong>Combina `.card-tilt` + `.img-zoom`</strong>
+                <p class="text-sm text-gray-600">Para tarjetas de servicios/productos interactivas</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">3️⃣</span>
+              <div>
+                <strong>Usa `.counter` para números importantes</strong>
+                <p class="text-sm text-gray-600">Años de experiencia, clientes, proyectos completados</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">4️⃣</span>
+              <div>
+                <strong>Botones principales = `.btn-magnetic` + `.ripple-effect`</strong>
+                <p class="text-sm text-gray-600">Para los botones más importantes (CTA)</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">5️⃣</span>
+              <div>
+                <strong>`.scroll-reveal` para casi todo lo demás</strong>
+                <p class="text-sm text-gray-600">Es tu comodín - úsalo en títulos, párrafos, secciones</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Ejemplos Aplicados -->
+        <div class="glass-card scroll-reveal bg-gradient-to-br from-blue-50 to-purple-50">
+          <h3 class="text-2xl font-bold text-dv-primary mb-4 flex items-center gap-2">
+            <span>✅</span> Ya Implementado en tu Sitio
+          </h3>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <span class="text-green-500 text-xl">✓</span>
+              <span><strong>Página Inicio:</strong> Grid de servicios con stagger-grid y card-tilt</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-green-500 text-xl">✓</span>
+              <span><strong>Sección "Por qué elegirnos":</strong> Tarjetas con card-tilt</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-green-500 text-xl">✓</span>
+              <span><strong>Presencia Regional:</strong> Contadores animados</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-green-500 text-xl">✓</span>
+              <span><strong>Botones CTA:</strong> Efectos magnéticos y ripple</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-green-500 text-xl">✓</span>
+              <span><strong>Hero Slider:</strong> Animaciones GSAP en transiciones</span>
+            </div>
+          </div>
+          <div class="mt-6 p-4 bg-white rounded-lg">
+            <p class="text-sm font-semibold mb-2">🎯 Próximos pasos:</p>
+            <ul class="text-sm text-gray-600 space-y-1 list-disc list-inside">
+              <li>Ve a <a href="/" class="text-blue-600 underline">la página de inicio</a> y haz scroll para ver las animaciones</li>
+              <li>Pasa el mouse sobre las tarjetas de servicios (efecto 3D)</li>
+              <li>Mira los números animados en "Presencia Regional"</li>
+              <li>Prueba los botones con efecto magnético</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-16 text-center">
+        <a href="/" class="btn-primary btn-magnetic ripple-effect inline-flex items-center gap-2">
+          <span>Ver Animaciones en Acción</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

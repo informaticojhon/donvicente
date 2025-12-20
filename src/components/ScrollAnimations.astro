@@ -1,0 +1,250 @@
+---
+// Componente para inicializar animaciones GSAP de scroll
+---
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const initScrollAnimations = () => {
+        // Limpiar triggers anteriores
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+        // 1. Fade In Up - Elementos con clase .scroll-reveal
+        const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+        scrollRevealElements.forEach((element) => {
+            gsap.fromTo(element,
+                {
+                    opacity: 0,
+                    y: 60,
+                    scale: 0.95
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 85%",
+                        end: "top 20%",
+                        toggleActions: "play none none reverse",
+                    }
+                }
+            );
+        });
+
+        // 2. Slide from Left - Elementos con clase .slide-left
+        const slideLeftElements = document.querySelectorAll('.slide-left');
+        slideLeftElements.forEach((element) => {
+            gsap.fromTo(element,
+                {
+                    opacity: 0,
+                    x: -100
+                },
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 80%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+        });
+
+        // 3. Slide from Right - Elementos con clase .slide-right
+        const slideRightElements = document.querySelectorAll('.slide-right');
+        slideRightElements.forEach((element) => {
+            gsap.fromTo(element,
+                {
+                    opacity: 0,
+                    x: 100
+                },
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 80%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+        });
+
+        // 4. Scale In - Elementos con clase .scale-in
+        const scaleInElements = document.querySelectorAll('.scale-in');
+        scaleInElements.forEach((element) => {
+            gsap.fromTo(element,
+                {
+                    opacity: 0,
+                    scale: 0.5
+                },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.8,
+                    ease: "back.out(1.7)",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 80%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+        });
+
+        // 5. Stagger Grid - Elementos dentro de .stagger-grid
+        const staggerGrids = document.querySelectorAll('.stagger-grid');
+        staggerGrids.forEach((grid) => {
+            const items = grid.children;
+            gsap.fromTo(items,
+                {
+                    opacity: 0,
+                    y: 40,
+                    scale: 0.9
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.6,
+                    stagger: 0.1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: grid,
+                        start: "top 75%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+        });
+
+        // 6. Parallax Effect - Elementos con clase .parallax
+        const parallaxElements = document.querySelectorAll('.parallax');
+        parallaxElements.forEach((element) => {
+            gsap.to(element, {
+                y: -50,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 1
+                }
+            });
+        });
+
+        // 7. Counter Animation - Elementos con clase .counter
+        const counterElements = document.querySelectorAll('.counter');
+        counterElements.forEach((element) => {
+            const target = parseInt(element.getAttribute('data-target') || '0');
+            const duration = parseFloat(element.getAttribute('data-duration') || '2');
+            
+            ScrollTrigger.create({
+                trigger: element,
+                start: "top 80%",
+                onEnter: () => {
+                    gsap.to(element, {
+                        textContent: target,
+                        duration: duration,
+                        ease: "power1.out",
+                        snap: { textContent: 1 },
+                        onUpdate: function() {
+                            element.textContent = Math.ceil(this.targets()[0].textContent).toString();
+                        }
+                    });
+                }
+            });
+        });
+
+        // 8. Text Reveal - Elementos con clase .text-reveal
+        const textRevealElements = document.querySelectorAll('.text-reveal');
+        textRevealElements.forEach((element) => {
+            const words = element.textContent?.split(' ');
+            if (words) {
+                element.innerHTML = words.map(word => 
+                    `<span class="inline-block opacity-0">${word}</span>`
+                ).join(' ');
+
+                const wordElements = element.querySelectorAll('span');
+                gsap.to(wordElements, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.5,
+                    stagger: 0.05,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 80%",
+                        toggleActions: "play none none reverse"
+                    }
+                });
+            }
+        });
+
+        // 9. Progress Bar - Elementos con clase .progress-bar
+        const progressBars = document.querySelectorAll('.progress-bar');
+        progressBars.forEach((bar) => {
+            const progress = bar.querySelector('.progress-fill');
+            const percentage = bar.getAttribute('data-percentage') || '0';
+            
+            if (progress) {
+                gsap.fromTo(progress,
+                    {
+                        width: '0%'
+                    },
+                    {
+                        width: percentage + '%',
+                        duration: 1.5,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: bar,
+                            start: "top 80%",
+                            toggleActions: "play none none reverse"
+                        }
+                    }
+                );
+            }
+        });
+
+        // 10. Rotate In - Elementos con clase .rotate-in
+        const rotateInElements = document.querySelectorAll('.rotate-in');
+        rotateInElements.forEach((element) => {
+            gsap.fromTo(element,
+                {
+                    opacity: 0,
+                    rotation: -15,
+                    scale: 0.8
+                },
+                {
+                    opacity: 1,
+                    rotation: 0,
+                    scale: 1,
+                    duration: 1,
+                    ease: "back.out(1.7)",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 80%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+        });
+    };
+
+    // Ejecutar al cargar
+    initScrollAnimations();
+
+    // Soporte para Astro View Transitions
+    document.addEventListener("astro:page-load", initScrollAnimations);
+</script>

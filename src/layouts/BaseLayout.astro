@@ -1,0 +1,162 @@
+---
+import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import BackToTop from "../components/BackToTop.astro";
+import ScrollAnimations from "../components/ScrollAnimations.astro";
+import HoverEffects from "../components/HoverEffects.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  url?: string;
+}
+
+const {
+  title = "Don Vicente - Servicios Integrales",
+  description = "Servicios profesionales de transporte, aseo, operarios y control de plagas en el sur de Chile.",
+  image = "/og-image.jpg",
+  url = "https://donvicente.cl",
+} = Astro.props;
+
+const currentUrl = url + Astro.url.pathname;
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Preconnect para Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+
+    <!-- Meta básicos -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#002a5c" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:site_name" content="Don Vicente" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={currentUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={currentUrl} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Schema.org LocalBusiness Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Don Vicente - Servicios Integrales",
+        "description": "Servicios profesionales de transporte, aseo industrial, operarios y control de plagas en Aysén, Chile",
+        "url": "https://donvicente.cl",
+        "logo": "https://donvicente.cl/logo.png",
+        "image": "https://donvicente.cl/og-image.jpg",
+        "telephone": "+56912345678",
+        "email": "contacto@donvicente.cl",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Melinka",
+          "addressRegion": "Región de Aysén",
+          "addressCountry": "CL"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -43.8971015,
+          "longitude": -73.7477777
+        },
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": -43.8971015,
+            "longitude": -73.7477777
+          },
+          "geoRadius": "100000"
+        },
+        "priceRange": "$$",
+        "openingHours": "Mo-Su 00:00-23:59",
+        "sameAs": ["https://wa.me/56912345678"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Servicios",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Transporte de Personal y Carga",
+                "description": "Servicio de transporte seguro en zonas urbanas y rurales"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Aseo Industrial",
+                "description": "Limpieza profunda y profesional para empresas e instituciones"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Control de Plagas",
+                "description": "Soluciones certificadas MINSAL para eliminación y prevención de plagas"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Operarios Industriales",
+                "description": "Personal capacitado para packing, construcción y faenas"
+              }
+            }
+          ]
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-dv-base text-dv-dark font-sans">
+    <!-- Skip Navigation Link para accesibilidad -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-6 focus:py-3 focus:bg-dv-primary focus:text-white focus:rounded-lg focus:shadow-xl"
+    >
+      Saltar al contenido principal
+    </a>
+
+    <Navbar />
+
+    <main id="main-content" class="pt-40 px-4">
+      <slot />
+    </main>
+
+    <Footer />
+    <BackToTop />
+    <ScrollAnimations />
+    <HoverEffects />
+  </body>
+</html>

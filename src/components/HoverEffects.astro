@@ -1,0 +1,503 @@
+---
+// Componente para efectos de hover interactivos con GSAP
+// Versión optimizada con limpieza de memoria, soporte táctil y mejor rendimiento
+---
+
+<script>
+    import { gsap } from "gsap";
+
+    // Estado global para gestión de listeners y animaciones
+    const state = {
+        listeners: new Map(),
+        animations: new Map(),
+        prefersReducedMotion: false
+    };
+
+    // Utilidades
+    const utils = {
+        // Throttle para eventos de alta frecuencia
+        throttle(func, wait) {
+            let timeout = null;
+            return function executedFunction(...args) {
+                const context = this;
+                const later = () => {
+                    timeout = null;
+                    func.apply(context, args);
+                };
+                if (!timeout) {
+                    timeout = setTimeout(later, wait);
+                }
+            };
+        },
+
+        // Detectar si el elemento está en viewport
+        isInViewport(element) {
+            if (!element) return false;
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top < window.innerHeight &&
+                rect.bottom > 0 &&
+                rect.left < window.innerWidth &&
+                rect.right > 0
+            );
+        },
+
+        // Detectar dispositivo táctil
+        isTouchDevice() {
+            return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+        },
+
+        // Agregar listener con seguimiento
+        addTrackedListener(element, event, handler, options = false) {
+            if (!element) return;
+            
+            element.addEventListener(event, handler, options);
+            
+            if (!state.listeners.has(element)) {
+                state.listeners.set(element, []);
+            }
+            state.listeners.get(element).push({ event, handler, options });
+        },
+
+        // Remover todos los listeners de un elemento
+        removeAllListeners(element) {
+            if (!element) return;
+            
+            const listeners = state.listeners.get(element);
+            if (listeners) {
+                listeners.forEach(({ event, handler, options }) => {
+                    element.removeEventListener(event, handler, options);
+                });
+                state.listeners.delete(element);
+            }
+        }
+    };
+
+    // Limpieza completa
+    const cleanup = () => {
+        // Matar todas las animaciones GSAP
+        state.animations.forEach(animation => {
+            if (animation && animation.kill) {
+                animation.kill();
+            }
+        });
+        state.animations.clear();
+
+        // Remover todos los event listeners
+        state.listeners.forEach((_, element) => {
+            utils.removeAllListeners(element);
+        });
+        state.listeners.clear();
+    };
+
+    const initHoverEffects = () => {
+        // Limpiar efectos previos
+        cleanup();
+
+        // Detectar preferencia de movimiento reducido
+        state.prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Si el usuario prefiere movimiento reducido, no aplicar animaciones complejas
+        if (state.prefersReducedMotion) {
+            console.log('🔇 Animaciones reducidas: respetando preferencias de accesibilidad');
+            return;
+        }
+
+        const isTouchDevice = utils.isTouchDevice();
+
+        // 1. Card Tilt Effect - Tarjetas con clase .card-tilt
+        const tiltCards = document.querySelectorAll('.card-tilt');
+        tiltCards.forEach((card, index) => {
+            card.dataset.effectId = `tilt-${index}`;
+
+            const handleMouseEnter = () => {
+                if (!card || !utils.isInViewport(card)) return;
+                
+                gsap.to(card, {
+                    scale: 1.05,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            };
+
+            const handleMouseMove = utils.throttle((e) => {
+                if (!card || !utils.isInViewport(card) || !e) return;
+
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+
+                gsap.to(card, {
+                    rotateX: rotateX,
+                    rotateY: rotateY,
+                    duration: 0.3,
+                    ease: "power2.out",
+                    transformPerspective: 1000
+                });
+            }, 16); // ~60fps
+
+            const handleMouseLeave = () => {
+                if (!card) return;
+                
+                gsap.to(card, {
+                    scale: 1,
+                    rotateX: 0,
+                    rotateY: 0,
+                    duration: 0.4,
+                    ease: "power2.out"
+                });
+            };
+
+            // Soporte táctil
+            if (isTouchDevice) {
+                utils.addTrackedListener(card, 'touchstart', handleMouseEnter);
+                utils.addTrackedListener(card, 'touchend', handleMouseLeave);
+            } else {
+                utils.addTrackedListener(card, 'mouseenter', handleMouseEnter);
+                utils.addTrackedListener(card, 'mousemove', handleMouseMove);
+                utils.addTrackedListener(card, 'mouseleave', handleMouseLeave);
+            }
+        });
+
+        // 2. Magnetic Button Effect - Botones con clase .btn-magnetic
+        const magneticButtons = document.querySelectorAll('.btn-magnetic');
+        magneticButtons.forEach((button, index) => {
+            button.dataset.effectId = `magnetic-${index}`;
+
+            const handleMouseMove = utils.throttle((e) => {
+                if (!button || !e) return;
+                
+                const rect = button.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+
+                gsap.to(button, {
+                    x: x * 0.3,
+                    y: y * 0.3,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            }, 16);
+
+            const handleMouseLeave = () => {
+                if (!button) return;
+                
+                gsap.to(button, {
+                    x: 0,
+                    y: 0,
+                    duration: 0.5,
+                    ease: "elastic.out(1, 0.5)"
+                });
+            };
+
+            // Solo en desktop (no tiene sentido en móvil)
+            if (!isTouchDevice) {
+                utils.addTrackedListener(button, 'mousemove', handleMouseMove);
+                utils.addTrackedListener(button, 'mouseleave', handleMouseLeave);
+            }
+        });
+
+        // 3. Image Zoom on Hover - Imágenes con clase .img-zoom
+        const zoomImages = document.querySelectorAll('.img-zoom');
+        zoomImages.forEach((img, index) => {
+            const container = img.parentElement;
+            if (!container) return;
+
+            container.dataset.effectId = `zoom-${index}`;
+            container.style.overflow = 'hidden';
+
+            const handleEnter = () => {
+                if (!img || !utils.isInViewport(img)) return;
+                
+                gsap.to(img, {
+                    scale: 1.15,
+                    duration: 0.6,
+                    ease: "power2.out"
+                });
+            };
+
+            const handleLeave = () => {
+                if (!img) return;
+                
+                gsap.to(img, {
+                    scale: 1,
+                    duration: 0.6,
+                    ease: "power2.out"
+                });
+            };
+
+            if (isTouchDevice) {
+                utils.addTrackedListener(container, 'touchstart', handleEnter);
+                utils.addTrackedListener(container, 'touchend', handleLeave);
+            } else {
+                utils.addTrackedListener(container, 'mouseenter', handleEnter);
+                utils.addTrackedListener(container, 'mouseleave', handleLeave);
+            }
+        });
+
+        // 4. Text Glitch Effect - Elementos con clase .text-glitch
+        const glitchTexts = document.querySelectorAll('.text-glitch');
+        glitchTexts.forEach((text, index) => {
+            text.dataset.effectId = `glitch-${index}`;
+
+            const handleGlitch = () => {
+                if (!text) return;
+                
+                const timeline = gsap.timeline();
+                
+                timeline.to(text, {
+                    skewX: 5,
+                    duration: 0.1,
+                    ease: "power1.inOut"
+                })
+                .to(text, {
+                    skewX: -5,
+                    duration: 0.1,
+                    ease: "power1.inOut"
+                })
+                .to(text, {
+                    skewX: 0,
+                    duration: 0.1,
+                    ease: "power1.inOut"
+                });
+            };
+
+            utils.addTrackedListener(text, isTouchDevice ? 'touchstart' : 'mouseenter', handleGlitch);
+        });
+
+        // 5. Ripple Effect - Elementos con clase .ripple-effect
+        const rippleElements = document.querySelectorAll('.ripple-effect');
+        rippleElements.forEach((element, index) => {
+            element.dataset.effectId = `ripple-${index}`;
+
+            const handleRipple = (e) => {
+                if (!element || !e) return;
+                
+                const rect = element.getBoundingClientRect();
+                const touchX = e.touches && e.touches[0] ? e.touches[0].clientX : null;
+                const touchY = e.touches && e.touches[0] ? e.touches[0].clientY : null;
+                const x = (e.clientX || touchX || 0) - rect.left;
+                const y = (e.clientY || touchY || 0) - rect.top;
+
+                // Verificar si ya existe un ripple para evitar duplicados
+                if (element.querySelector('.gsap-ripple')) return;
+
+                const ripple = document.createElement('span');
+                ripple.className = 'gsap-ripple';
+                ripple.style.cssText = `
+                    position: absolute;
+                    background: rgba(255, 255, 255, 0.6);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    pointer-events: none;
+                    left: ${x}px;
+                    top: ${y}px;
+                    width: 20px;
+                    height: 20px;
+                    margin-left: -10px;
+                    margin-top: -10px;
+                `;
+
+                const originalPosition = getComputedStyle(element).position;
+                const originalOverflow = getComputedStyle(element).overflow;
+                
+                element.style.position = originalPosition === 'static' ? 'relative' : originalPosition;
+                element.style.overflow = 'hidden';
+                element.appendChild(ripple);
+
+                gsap.to(ripple, {
+                    scale: 20,
+                    opacity: 0,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    onComplete: () => {
+                        ripple.remove();
+                        // Restaurar estilos si no hay más ripples
+                        if (!element.querySelector('.gsap-ripple')) {
+                            element.style.overflow = originalOverflow;
+                        }
+                    }
+                });
+            };
+
+            utils.addTrackedListener(element, 'click', handleRipple);
+            if (isTouchDevice) {
+                utils.addTrackedListener(element, 'touchstart', handleRipple);
+            }
+        });
+
+        // 6. Float Animation - Elementos con clase .float-element
+        const floatElements = document.querySelectorAll('.float-element');
+        floatElements.forEach((element, index) => {
+            element.dataset.effectId = `float-${index}`;
+
+            const startFloat = () => {
+                if (!element) return;
+                
+                if (utils.isInViewport(element) && !state.animations.has(element)) {
+                    const animation = gsap.to(element, {
+                        y: -10,
+                        duration: 2,
+                        ease: "power1.inOut",
+                        yoyo: true,
+                        repeat: -1,
+                        delay: index * 0.2
+                    });
+                    state.animations.set(element, animation);
+                }
+            };
+
+            // Observer para pausar/reanudar según visibilidad
+            if (typeof IntersectionObserver !== 'undefined') {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            startFloat();
+                        } else {
+                            const animation = state.animations.get(element);
+                            if (animation && typeof animation.pause === 'function') {
+                                animation.pause();
+                            }
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                observer.observe(element);
+            }
+            startFloat();
+        });
+
+        // 7. Pulse Animation - Elementos con clase .pulse-scale
+        const pulseElements = document.querySelectorAll('.pulse-scale');
+        pulseElements.forEach((element, index) => {
+            element.dataset.effectId = `pulse-${index}`;
+
+            const startPulse = () => {
+                if (!element) return;
+                
+                if (utils.isInViewport(element) && !state.animations.has(element)) {
+                    const animation = gsap.to(element, {
+                        scale: 1.05,
+                        duration: 1.5,
+                        ease: "power1.inOut",
+                        yoyo: true,
+                        repeat: -1,
+                        delay: index * 0.2
+                    });
+                    state.animations.set(element, animation);
+                }
+            };
+
+            if (typeof IntersectionObserver !== 'undefined') {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            startPulse();
+                        } else {
+                            const animation = state.animations.get(element);
+                            if (animation && typeof animation.pause === 'function') {
+                                animation.pause();
+                            }
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                observer.observe(element);
+            }
+            startPulse();
+        });
+
+        // 8. Slide Underline - Enlaces con clase .slide-underline
+        const slideUnderlines = document.querySelectorAll('.slide-underline');
+        slideUnderlines.forEach((link, index) => {
+            link.dataset.effectId = `underline-${index}`;
+
+            // Verificar si ya tiene underline para evitar duplicados
+            if (link.querySelector('.gsap-underline')) return;
+
+            const underline = document.createElement('span');
+            underline.className = 'gsap-underline';
+            underline.style.cssText = `
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: currentColor;
+                transition: width 0.3s ease;
+            `;
+            
+            const originalPosition = getComputedStyle(link).position;
+            link.style.position = originalPosition === 'static' ? 'relative' : originalPosition;
+            link.appendChild(underline);
+
+            const handleEnter = () => {
+                if (!underline) return;
+                
+                gsap.to(underline, {
+                    width: '100%',
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            };
+
+            const handleLeave = () => {
+                if (!underline) return;
+                
+                gsap.to(underline, {
+                    width: '0%',
+                    duration: 0.3,
+                    ease: "power2.in"
+                });
+            };
+
+            utils.addTrackedListener(link, isTouchDevice ? 'touchstart' : 'mouseenter', handleEnter);
+            utils.addTrackedListener(link, isTouchDevice ? 'touchend' : 'mouseleave', handleLeave);
+        });
+
+        console.log('✨ Hover effects iniciados:', {
+            tiltCards: tiltCards.length,
+            magneticButtons: magneticButtons.length,
+            zoomImages: zoomImages.length,
+            floatElements: floatElements.length,
+            pulseElements: pulseElements.length,
+            touchDevice: isTouchDevice,
+            reducedMotion: state.prefersReducedMotion
+        });
+    };
+
+    // Ejecutar al cargar
+    initHoverEffects();
+
+    // Monitorear cambios en preferencias de movimiento
+    if (typeof window !== 'undefined' && window.matchMedia) {
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const handleMotionChange = (e) => {
+            state.prefersReducedMotion = e.matches;
+            if (e.matches) {
+                cleanup();
+            } else {
+                initHoverEffects();
+            }
+        };
+        
+        // Usar el método correcto según disponibilidad
+        if (mediaQuery.addEventListener) {
+            mediaQuery.addEventListener('change', handleMotionChange);
+        } else if (mediaQuery.addListener) {
+            // Fallback para navegadores más antiguos
+            mediaQuery.addListener(handleMotionChange);
+        }
+    }
+
+    // Limpieza al cerrar/navegar
+    if (typeof window !== 'undefined') {
+        window.addEventListener('beforeunload', cleanup);
+    }
+</script>

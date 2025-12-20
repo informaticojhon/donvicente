@@ -1,0 +1,110 @@
+<!-- Botón Volver Arriba -->
+<button
+  id="backToTop"
+  class="back-to-top"
+  aria-label="Volver arriba"
+  title="Volver arriba"
+>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 15l-6-6-6 6"/>
+  </svg>
+</button>
+
+<style>
+  .back-to-top {
+    position: fixed;
+    bottom: 5.5rem;
+    right: 2rem;
+    z-index: 999;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #002a5c 0%, #001940 100%);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 42, 92, 0.3);
+  }
+
+  .back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .back-to-top:hover {
+    background: linear-gradient(135deg, #d71920 0%, #a01318 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(215, 25, 32, 0.4);
+  }
+
+  .back-to-top:active {
+    transform: translateY(-1px) scale(0.95);
+  }
+
+  .back-to-top:focus-visible {
+    outline: 3px solid #d71920;
+    outline-offset: 3px;
+  }
+
+  /* Responsive: ajustar posición en móvil */
+  @media (max-width: 640px) {
+    .back-to-top {
+      bottom: 5rem;
+      right: 1.5rem;
+      width: 44px;
+      height: 44px;
+    }
+
+    .back-to-top svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  /* Animación de entrada */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .back-to-top.visible {
+    animation: slideUp 0.4s ease-out;
+  }
+</style>
+
+<script>
+  // Mostrar/ocultar botón según scroll
+  const backToTopButton = document.getElementById('backToTop');
+  
+  if (backToTopButton) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    });
+
+    // Scroll suave al hacer clic
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+</script>

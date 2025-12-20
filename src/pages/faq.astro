@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Preguntas Frecuentes - Don Vicente"
+  description="Respuestas a las preguntas más comunes sobre nuestros servicios de transporte, aseo, control de plagas y operarios."
+>
+  <section class="py-16">
+    <div class="container max-w-3xl mx-auto">
+      <h2 class="section-title">Preguntas Frecuentes</h2>
+
+      <div class="space-y-6 mt-8">
+        <details class="group glass-card">
+          <summary class="cursor-pointer flex justify-between items-center text-dv-primary font-semibold text-lg">
+            ¿Cómo puedo solicitar un servicio?
+            <span class="transition-transform duration-300 group-open:rotate-180">▼</span>
+          </summary>
+          <p class="text-dv-dark mt-3 pt-3 border-t border-gray-200">Puedes llamarnos directamente, escribirnos por WhatsApp o usar el formulario de contacto disponible en esta página.</p>
+        </details>
+
+        <details class="group glass-card">
+          <summary class="cursor-pointer flex justify-between items-center text-dv-primary font-semibold text-lg">
+            ¿Ofrecen servicios fuera de Melinka?
+            <span class="transition-transform duration-300 group-open:rotate-180">▼</span>
+          </summary>
+          <p class="text-dv-dark mt-3 pt-3 border-t border-gray-200">Sí, cubrimos varias localidades cercanas y también realizamos traslados especiales previa coordinación.</p>
+        </details>
+
+        <details class="group glass-card">
+          <summary class="cursor-pointer flex justify-between items-center text-dv-primary font-semibold text-lg">
+            ¿Los servicios de aseo incluyen insumos?
+            <span class="transition-transform duration-300 group-open:rotate-180">▼</span>
+          </summary>
+          <p class="text-dv-dark mt-3 pt-3 border-t border-gray-200">Sí, nuestros presupuestos incluyen todo lo necesario para realizar el trabajo de forma profesional y eficiente.</p>
+        </details>
+
+        <details class="group glass-card">
+          <summary class="cursor-pointer flex justify-between items-center text-dv-primary font-semibold text-lg">
+            ¿Puedo contratar operarios por jornada?
+            <span class="transition-transform duration-300 group-open:rotate-180">▼</span>
+          </summary>
+          <p class="text-dv-dark mt-3 pt-3 border-t border-gray-200">Claro, trabajamos con flexibilidad según tu necesidad: por día, por semana o proyectos específicos.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
