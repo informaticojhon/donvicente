@@ -151,20 +151,6 @@ Puedes ajustar los delays con inline styles:
 </button>
 ```
 
-## 📄 Página de Demostración
-
-Visita `/animaciones-demo` para ver todas las animaciones en acción:
-
-```
-http://localhost:4321/animaciones-demo
-```
-
-Esta página incluye:
-- Ejemplos de todas las animaciones
-- Guía de uso
-- Código de ejemplo
-- Mejores prácticas
-
 ## 🔧 Integración en BaseLayout
 
 Las animaciones ya están integradas globalmente en `BaseLayout.astro`:
