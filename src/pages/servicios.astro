@@ -8,29 +8,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 >
   <!-- Hero Section -->
   <section
-    class="relative overflow-hidden min-h-[50vh] flex items-center mb-16"
+    class="relative py-16 md:py-20 mb-16"
   >
-    <div
-      class="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-red-500/10 -z-10"
-    >
-    </div>
-    <div
-      class="absolute top-10 right-10 w-64 h-64 bg-blue-400/20 rounded-full blur-3xl -z-10"
-    >
-    </div>
 
     <div class="container mx-auto px-6 text-center">
-      <div
-        class="inline-block glass px-6 py-3 rounded-full text-sm font-bold text-dv-primary mb-6 animate-fade-in"
-      >
-        <span
-          class="inline-block w-2 h-2 bg-dv-secondary rounded-full mr-2 animate-pulse"
-        ></span>
-        Servicios Integrales
-      </div>
-
       <h1
-        class="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-dv-primary via-blue-600 to-dv-primary mb-6 tracking-tight leading-tight animate-fade-in animate-delay-100"
+        class="text-4xl md:text-5xl font-bold text-dv-primary mb-6 tracking-tight leading-tight animate-fade-in animate-delay-100"
       >
         Transporte, Aseo y Control de Plagas en Aysén
       </h1>
@@ -50,11 +33,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="py-20">
     <div class="container mx-auto px-6">
       <div class="max-w-6xl mx-auto">
-        <div class="glass-card scroll-reveal">
+        <div class="glass-card">
           <div class="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <div
-                class="rounded-3xl overflow-hidden shadow-2xl mx-auto md:mx-0 mb-6"
+                class="rounded-3xl overflow-hidden shadow-md mx-auto md:mx-0 mb-6"
               >
                 <img
                   src="/images/transportepersonal.webp"
@@ -198,10 +181,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </section>
 
   <!-- Servicio 2: Aseo Industrial -->
-  <section class="py-20 bg-gradient-to-b from-transparent to-blue-50/30">
+  <section class="py-20">
     <div class="container mx-auto px-6">
       <div class="max-w-6xl mx-auto">
-        <div class="glass-card scroll-reveal">
+        <div class="glass-card">
           <div class="grid md:grid-cols-2 gap-12 items-center">
             <div class="order-2 md:order-1">
               <div class="flex items-center gap-3 mb-4">
@@ -333,7 +316,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
             <div class="order-1 md:order-2">
               <div
-                class="rounded-3xl overflow-hidden shadow-2xl mx-auto md:mx-0 mb-6"
+                class="rounded-3xl overflow-hidden shadow-md mx-auto md:mx-0 mb-6"
               >
                 <img
                   src="/images/aseoindustrial.webp"
@@ -353,11 +336,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="py-20">
     <div class="container mx-auto px-6">
       <div class="max-w-6xl mx-auto">
-        <div class="glass-card scroll-reveal">
+        <div class="glass-card">
           <div class="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <div
-                class="rounded-3xl overflow-hidden shadow-2xl mx-auto md:mx-0 mb-6"
+                class="rounded-3xl overflow-hidden shadow-md mx-auto md:mx-0 mb-6"
               >
                 <img
                   src="/images/controlplagas.webp"
@@ -504,10 +487,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </section>
 
   <!-- Servicio 4: Operarios Industriales -->
-  <section class="py-20 bg-gradient-to-b from-transparent to-blue-50/30">
+  <section class="py-20">
     <div class="container mx-auto px-6">
       <div class="max-w-6xl mx-auto">
-        <div class="glass-card scroll-reveal">
+        <div class="glass-card">
           <div class="grid md:grid-cols-2 gap-12 items-center">
             <div class="order-2 md:order-1">
               <div class="flex items-center gap-3 mb-4">
@@ -640,7 +623,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
             <div class="order-1 md:order-2">
               <div
-                class="rounded-3xl overflow-hidden shadow-2xl mx-auto md:mx-0 mb-6"
+                class="rounded-3xl overflow-hidden shadow-md mx-auto md:mx-0 mb-6"
               >
                 <img
                   src="/images/operariosindustriales.webp"
@@ -656,53 +639,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <!-- Por qué elegirnos -->
+  <!-- CTA Final -->
   <section class="py-20">
     <div class="container mx-auto px-6">
-      <h2 class="section-title mb-4">¿Por qué Elegir Don Vicente?</h2>
-      <p class="section-subtitle mb-16">Ventajas de trabajar con nosotros</p>
-
-      <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
-        <div class="glass-card text-center scroll-reveal">
-          <div class="text-5xl mb-4">⚡</div>
-          <h3 class="text-xl font-bold text-dv-primary mb-3">
-            Respuesta Rápida
-          </h3>
-          <p class="text-gray-700 leading-relaxed">
-            Cotizaciones en menos de 24 horas y disponibilidad inmediata
-          </p>
-        </div>
-        <div
-          class="glass-card text-center scroll-reveal"
-          style="animation-delay: 0.1s;"
-        >
-          <div class="text-5xl mb-4">💰</div>
-          <h3 class="text-xl font-bold text-dv-primary mb-3">
-            Precios Competitivos
-          </h3>
-          <p class="text-gray-700 leading-relaxed">
-            Tarifas justas sin comprometer la calidad del servicio
-          </p>
-        </div>
-        <div
-          class="glass-card text-center scroll-reveal"
-          style="animation-delay: 0.2s;"
-        >
-          <div class="text-5xl mb-4">🔒</div>
-          <h3 class="text-xl font-bold text-dv-primary mb-3">Garantía Total</h3>
-          <p class="text-gray-700 leading-relaxed">
-            Respaldamos nuestro trabajo con garantía de satisfacción
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Final -->
-  <section class="py-20 bg-gradient-to-b from-transparent to-blue-50/30">
-    <div class="container mx-auto px-6">
-      <div class="max-w-4xl mx-auto glass-card text-center scroll-reveal">
-        <div class="text-6xl mb-6">📋</div>
+      <div class="max-w-4xl mx-auto glass-card text-center">
         <h2 class="text-3xl md:text-5xl font-bold text-dv-primary mb-6">
           ¿Necesitas un Servicio?
         </h2>
@@ -735,7 +675,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </a>
           <a
             href="tel:+56944344320"
-            class="px-10 py-5 rounded-xl font-semibold glass hover:bg-white/90 text-dv-primary transition-all duration-300 hover:scale-105 hover:shadow-2xl inline-flex items-center justify-center gap-3 text-lg"
+            class="px-10 py-5 rounded-xl font-semibold glass hover:bg-white/90 text-dv-primary transition-all duration-300 hover:shadow-md inline-flex items-center justify-center gap-3 text-lg"
           >
             <svg
               class="w-6 h-6"

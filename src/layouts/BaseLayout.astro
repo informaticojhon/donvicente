@@ -3,8 +3,6 @@ import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import BackToTop from "../components/BackToTop.astro";
-import ScrollAnimations from "../components/ScrollAnimations.astro";
-import HoverEffects from "../components/HoverEffects.astro";
 
 interface Props {
   title?: string;
@@ -160,7 +158,5 @@ const imageUrl = new URL(image, url).href;
 
     <Footer />
     <BackToTop />
-    <ScrollAnimations />
-    <HoverEffects />
   </body>
 </html>

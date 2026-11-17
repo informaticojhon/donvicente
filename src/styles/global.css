@@ -9,28 +9,12 @@
 @layer base {
   body {
     font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 25%, #fff 50%, #e0f7fa 75%, #e0f2fe 100%);
-    background-size: 400% 400%;
-    animation: gradient-shift 15s ease infinite;
+    background: #f8fafc;
     color: #1f1f1f;
     line-height: 1.75;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-
-  @keyframes gradient-shift {
-    0% {
-      background-position: 0% 50%;
-    }
-
-    50% {
-      background-position: 100% 50%;
-    }
-
-    100% {
-      background-position: 0% 50%;
-    }
   }
 
   h1,
@@ -72,67 +56,27 @@
     outline: 3px solid #00bcd4;
     outline-offset: 3px;
   }
-
-  /* Mejorar renderizado de texto con gradientes */
-  .bg-clip-text {
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    padding-bottom: 0.1em;
-    display: inline-block;
-  }
 }
 
 /* ✅ Componentes reutilizables */
 @layer components {
+  /* Botones: color sólido, sin brillos ni escalados */
   .btn-primary {
-    @apply inline-block bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-600 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out hover:scale-110 relative overflow-hidden;
-  }
-
-  .btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s;
-  }
-
-  .btn-primary:hover::before {
-    left: 100%;
+    @apply inline-block bg-dv-primary text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 hover:bg-blue-900 hover:text-white;
   }
 
   .btn-primary-lg {
-    @apply inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 via-blue-700 to-cyan-700 text-white px-10 py-5 rounded-xl font-bold shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 ease-in-out hover:scale-105 relative overflow-hidden text-lg;
-  }
-
-  .btn-primary-lg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transition: left 0.5s;
-  }
-
-  .btn-primary-lg:hover::before {
-    left: 100%;
+    @apply inline-flex items-center justify-center gap-2 bg-dv-primary text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200 hover:bg-blue-900 hover:text-white;
   }
 
   .btn-secondary {
-    @apply inline-block bg-gradient-to-r from-dv-secondary to-cyan-500 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-2xl transition-all duration-300 ease-in-out hover:scale-110;
+    @apply inline-block bg-white text-dv-primary border border-dv-primary px-6 py-3 rounded-lg font-semibold transition-colors duration-200 hover:bg-dv-primary hover:text-white;
   }
 
   .section-title {
-    @apply text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-dv-primary via-blue-600 to-dv-primary mb-4 text-center;
-    letter-spacing: -0.03em;
-    padding-top: 0.15em;
-    padding-bottom: 0.15em;
-    display: inline-block;
+    @apply text-3xl md:text-4xl font-bold text-dv-primary mb-4 text-center;
+    letter-spacing: -0.02em;
+    display: block;
     width: 100%;
   }
 
@@ -140,30 +84,17 @@
     @apply text-base md:text-lg text-gray-600 text-center max-w-2xl mx-auto mb-12 leading-relaxed;
   }
 
-  /* ✨ Efecto Glass Morphism */
+  /* Tarjetas: fondo blanco con borde suave (antes efecto vidrio) */
   .glass {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    @apply bg-white border border-slate-200 shadow-sm;
   }
 
   .glass-dark {
-    background: rgba(0, 42, 92, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    @apply bg-dv-primary/80 border border-white/10;
   }
 
   .glass-card {
-    @apply glass rounded-2xl p-6 transition-all duration-300 hover:shadow-2xl hover:scale-105;
-    transform-style: preserve-3d;
-  }
-
-  .glass-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 60px rgba(0, 42, 92, 0.25);
+    @apply bg-white border border-slate-200 rounded-xl p-6 shadow-sm transition-shadow duration-200 hover:shadow-md;
   }
 }
 
@@ -172,7 +103,7 @@
   @keyframes fade-in {
     from {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(12px);
     }
 
     to {
@@ -217,47 +148,6 @@
 
   .animate-delay-400 {
     animation-delay: 0.4s;
-  }
-
-  /* Animación de scroll reveal */
-  .scroll-reveal {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  }
-
-  .scroll-reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  @keyframes slide-up {
-    from {
-      opacity: 0;
-      transform: translateY(50px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Efecto de contador animado */
-  @keyframes count-up {
-    from {
-      opacity: 0;
-      transform: scale(0.5);
-    }
-
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  .animate-count {
-    animation: count-up 0.6s ease-out;
   }
 
   /* Utilidad sr-only para accesibilidad */

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeroSlider from "../components/HeroSlider.astro";
+import Icon from "../components/Icon.astro";
 ---
 
 <BaseLayout
@@ -18,13 +19,13 @@ import HeroSlider from "../components/HeroSlider.astro";
         Soluciones completas para tu negocio
       </p>
 
-      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto stagger-grid">
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         <!-- Transporte -->
         <div
-          class="glass-card p-8 text-center card-tilt group hover:shadow-2xl transition-all duration-300"
+          class="glass-card p-8 text-center group hover:shadow-md transition-all duration-300"
         >
           <div
-            class="w-full h-48 mb-6 overflow-hidden rounded-2xl group-hover:scale-105 transition-transform duration-500 shadow-lg"
+            class="w-full h-48 mb-6 overflow-hidden rounded-2xl transition-transform duration-500 shadow-sm"
           >
             <img
               src="/images/carga.webp"
@@ -72,17 +73,17 @@ import HeroSlider from "../components/HeroSlider.astro";
 
         <!-- Aseo Industrial -->
         <div
-          class="glass-card p-8 text-center card-tilt group hover:shadow-2xl transition-all duration-300"
+          class="glass-card p-8 text-center group hover:shadow-md transition-all duration-300"
         >
           <div
-            class="w-full h-48 mb-6 overflow-hidden rounded-2xl shadow-lg"
+            class="w-full h-48 mb-6 overflow-hidden rounded-2xl shadow-sm"
           >
             <img
               src="/images/aseo.webp"
               loading="lazy"
               decoding="async"
               alt="Servicio de Aseo Industrial"
-              class="w-full h-full object-cover img-zoom"
+              class="w-full h-full object-cover"
             />
           </div>
           <h3 class="text-2xl font-bold text-dv-primary mb-3">
@@ -125,21 +126,21 @@ import HeroSlider from "../components/HeroSlider.astro";
 
         <!-- Control de Plagas -->
         <div
-          class="glass-card p-8 text-center card-tilt group hover:shadow-2xl transition-all duration-300"
+          class="glass-card p-8 text-center group hover:shadow-md transition-all duration-300"
         >
           <div
-            class="w-full h-48 mb-6 overflow-hidden rounded-2xl shadow-lg relative"
+            class="w-full h-48 mb-6 overflow-hidden rounded-2xl shadow-sm relative"
           >
             <img
               src="/images/cplagas.webp"
               loading="lazy"
               decoding="async"
               alt="Control de Plagas Certificado"
-              class="w-full h-full object-cover img-zoom"
+              class="w-full h-full object-cover"
             />
             <!-- Badge MINSAL -->
             <div
-              class="absolute top-2 right-2 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full shadow-lg z-10"
+              class="absolute top-2 right-2 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10"
             >
               MINSAL
             </div>
@@ -188,19 +189,19 @@ import HeroSlider from "../components/HeroSlider.astro";
   <!-- Sectores que Atendemos -->
   <section class="py-20">
     <div class="container mx-auto px-6">
-      <h2 class="section-title mb-4 scroll-reveal">Sectores que Atendemos</h2>
-      <p class="section-subtitle mb-16 scroll-reveal">
+      <h2 class="section-title mb-4">Sectores que Atendemos</h2>
+      <p class="section-subtitle mb-16">
         Experiencia multisectorial en toda la región
       </p>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto stagger-grid">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         <!-- Pesca y Acuicultura -->
-        <div class="glass-card group scale-in">
+        <div class="glass-card group">
           <div class="flex items-center gap-4 mb-4">
             <div
-              class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center text-4xl shadow-lg pulse-scale"
+              class="w-16 h-16 bg-dv-primary rounded-xl flex items-center justify-center text-4xl shadow-sm"
             >
-              🏭
+              <Icon name="factory" class="w-8 h-8 text-white" />
             </div>
             <h3 class="text-xl font-bold text-dv-primary">
               Pesca y Acuicultura
@@ -214,13 +215,13 @@ import HeroSlider from "../components/HeroSlider.astro";
 
         <!-- Educación -->
         <div
-          class="glass-card group scale-in"
+          class="glass-card group"
         >
           <div class="flex items-center gap-4 mb-4">
             <div
-              class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-xl flex items-center justify-center text-4xl shadow-lg pulse-scale"
+              class="w-16 h-16 bg-dv-primary rounded-xl flex items-center justify-center text-4xl shadow-sm"
             >
-              🏫
+              <Icon name="school" class="w-8 h-8 text-white" />
             </div>
             <h3 class="text-xl font-bold text-dv-primary">Educación</h3>
           </div>
@@ -231,13 +232,13 @@ import HeroSlider from "../components/HeroSlider.astro";
 
         <!-- Empresas Privadas -->
         <div
-          class="glass-card group scale-in"
+          class="glass-card group"
         >
           <div class="flex items-center gap-4 mb-4">
             <div
-              class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-xl flex items-center justify-center text-4xl shadow-lg pulse-scale"
+              class="w-16 h-16 bg-dv-primary rounded-xl flex items-center justify-center text-4xl shadow-sm"
             >
-              🏢
+              <Icon name="building-2" class="w-8 h-8 text-white" />
             </div>
             <h3 class="text-xl font-bold text-dv-primary">Empresas Privadas</h3>
           </div>
@@ -249,112 +250,15 @@ import HeroSlider from "../components/HeroSlider.astro";
     </div>
   </section>
 
-  <!-- ¿Por qué elegirnos? -->
-  <section class="py-24 bg-gradient-to-b from-blue-50/30 to-transparent">
-    <div class="container mx-auto px-6">
-      <h2 class="section-title scroll-reveal">¿Por qué elegirnos?</h2>
-      <p class="section-subtitle scroll-reveal">
-        La experiencia y calidad que tu empresa necesita
-      </p>
-
-      <div class="grid md:grid-cols-3 gap-10 stagger-grid">
-        <div class="glass-card group card-tilt">
-          <div class="flex items-center gap-4 mb-4">
-            <div
-              class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center shadow-lg rotate-in"
-            >
-              <svg
-                class="w-7 h-7 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-dv-primary">Confianza</h3>
-          </div>
-          <p class="text-gray-700 leading-relaxed">
-            Somos reconocidos por nuestra seriedad y compromiso en cada
-            servicio.
-          </p>
-        </div>
-        <div
-          class="glass-card group card-tilt"
-        >
-          <div class="flex items-center gap-4 mb-4">
-            <div
-              class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-700 rounded-xl flex items-center justify-center shadow-lg rotate-in"
-            >
-              <svg
-                class="w-7 h-7 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-dv-primary">Experiencia</h3>
-          </div>
-          <p class="text-gray-700 leading-relaxed">
-            Más de 10 años prestando soluciones eficientes a empresas e
-            instituciones.
-          </p>
-        </div>
-        <div
-          class="glass-card group card-tilt"
-        >
-          <div class="flex items-center gap-4 mb-4">
-            <div
-              class="w-14 h-14 bg-gradient-to-br from-red-500 to-red-700 rounded-xl flex items-center justify-center shadow-lg rotate-in"
-            >
-              <svg
-                class="w-7 h-7 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-dv-primary">
-              Personal Capacitado
-            </h3>
-          </div>
-          <p class="text-gray-700 leading-relaxed">
-            Contamos con equipos entrenados y comprometidos para cada área de
-            trabajo.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Presencia Regional -->
-  <section class="py-20 bg-gradient-to-b from-transparent to-blue-50/30">
+  <section class="py-20">
     <div class="container mx-auto px-6">
       <h2 class="section-title mb-4">Presencia Regional</h2>
       <p class="section-subtitle mb-16">Servicios en toda la Región de Aysén</p>
 
       <div class="max-w-5xl mx-auto">
-        <div class="glass-card scroll-reveal">
+        <div class="glass-card">
           <div class="text-center mb-8">
-            <div class="text-8xl mb-4 float-element">🗺️</div>
             <h3 class="text-2xl font-bold text-dv-primary mb-2">
               Cobertura Regional Completa
             </h3>
@@ -363,30 +267,30 @@ import HeroSlider from "../components/HeroSlider.astro";
             </p>
           </div>
 
-          <div class="grid md:grid-cols-3 gap-6 mb-8 stagger-grid">
+          <div class="grid md:grid-cols-3 gap-6 mb-8">
             <div class="text-center">
               <div
-                class="w-16 h-16 bg-gradient-to-br from-dv-primary to-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 text-white text-2xl font-bold shadow-lg pulse-scale"
+                class="w-16 h-16 bg-dv-primary rounded-full flex items-center justify-center mx-auto mb-3 text-white text-2xl font-bold shadow-sm"
               >
-                📍
+                <Icon name="map-pin" class="w-7 h-7 text-white" />
               </div>
               <h4 class="font-bold text-dv-primary mb-1">Base Principal</h4>
               <p class="text-sm text-gray-700">Melinka</p>
             </div>
             <div class="text-center">
               <div
-                class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center mx-auto mb-3 text-white text-2xl font-bold shadow-lg"
+                class="w-16 h-16 bg-dv-primary rounded-full flex items-center justify-center mx-auto mb-3 text-white text-2xl font-bold shadow-sm"
               >
-                <span class="counter" data-target="5" data-duration="2">0</span>+
+                <span>5</span>+
               </div>
               <h4 class="font-bold text-dv-primary mb-1">Comunas</h4>
               <p class="text-sm text-gray-700">Atendidas</p>
             </div>
             <div class="text-center">
               <div
-                class="w-16 h-16 bg-gradient-to-br from-dv-secondary to-red-600 rounded-full flex items-center justify-center mx-auto mb-3 text-white text-2xl font-bold shadow-lg"
+                class="w-16 h-16 bg-dv-primary rounded-full flex items-center justify-center mx-auto mb-3 text-white text-2xl font-bold shadow-sm"
               >
-                <span class="counter" data-target="100" data-duration="2">0</span>%
+                <span>100</span>%
               </div>
               <h4 class="font-bold text-dv-primary mb-1">Cobertura</h4>
               <p class="text-sm text-gray-700">Regional</p>
@@ -397,129 +301,16 @@ import HeroSlider from "../components/HeroSlider.astro";
     </div>
   </section>
 
-  <!-- Cómo Trabajamos -->
-  <section class="py-24">
-    <div class="container mx-auto px-6">
-      <h2 class="section-title scroll-reveal">¿Cómo Trabajamos?</h2>
-      <p class="section-subtitle scroll-reveal">
-        Nuestro proceso garantiza calidad y eficiencia en cada etapa
-      </p>
-
-      <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto stagger-grid">
-        <!-- Step 1 -->
-        <div class="relative">
-          <div class="glass-card text-center group card-tilt">
-            <div
-              class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-dv-primary to-dv-secondary rounded-full flex items-center justify-center text-white text-3xl font-extrabold shadow-xl pulse-scale"
-            >
-              1
-            </div>
-            <h3 class="text-lg font-bold text-dv-primary mb-3">Contacto</h3>
-            <p class="text-sm text-gray-700 leading-relaxed">
-              Nos cuentas tu necesidad por teléfono o WhatsApp
-            </p>
-          </div>
-          <!-- Flecha conectora (solo desktop) -->
-          <div
-            class="hidden md:block absolute top-10 -right-4 text-dv-primary text-4xl font-bold opacity-30"
-          >
-            →
-          </div>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="relative scroll-reveal" style="animation-delay: 0.1s;">
-          <div class="glass-card text-center group">
-            <div
-              class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-dv-primary to-dv-secondary rounded-full flex items-center justify-center text-white text-3xl font-extrabold shadow-xl group-hover:scale-110 group-hover:rotate-12 transition-all"
-            >
-              2
-            </div>
-            <h3 class="text-lg font-bold text-dv-primary mb-3">Evaluación</h3>
-            <p class="text-sm text-gray-700 leading-relaxed">
-              Analizamos tu requerimiento y elaboramos una propuesta
-              personalizada
-            </p>
-          </div>
-          <div
-            class="hidden md:block absolute top-10 -right-4 text-dv-primary text-4xl font-bold opacity-30"
-          >
-            →
-          </div>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="relative scroll-reveal" style="animation-delay: 0.2s;">
-          <div class="glass-card text-center group">
-            <div
-              class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-dv-primary to-dv-secondary rounded-full flex items-center justify-center text-white text-3xl font-extrabold shadow-xl group-hover:scale-110 group-hover:rotate-12 transition-all"
-            >
-              3
-            </div>
-            <h3 class="text-lg font-bold text-dv-primary mb-3">Ejecución</h3>
-            <p class="text-sm text-gray-700 leading-relaxed">
-              Realizamos el servicio con personal capacitado y equipos de
-              calidad
-            </p>
-          </div>
-          <div
-            class="hidden md:block absolute top-10 -right-4 text-dv-primary text-4xl font-bold opacity-30"
-          >
-            →
-          </div>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="relative scroll-reveal" style="animation-delay: 0.3s;">
-          <div class="glass-card text-center group">
-            <div
-              class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-dv-primary to-dv-secondary rounded-full flex items-center justify-center text-white text-3xl font-extrabold shadow-xl group-hover:scale-110 group-hover:rotate-12 transition-all"
-            >
-              4
-            </div>
-            <h3 class="text-lg font-bold text-dv-primary mb-3">Seguimiento</h3>
-            <p class="text-sm text-gray-700 leading-relaxed">
-              Verificamos tu satisfacción y mantenemos el compromiso a largo
-              plazo
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center mt-16">
-        <a
-          href="/contacto"
-          class="btn-primary inline-flex items-center gap-3 shadow-2xl"
-        >
-          <span>Comenzar Ahora</span>
-          <svg
-            class="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- CTA Final Mejorado -->
   <section class="py-20 relative overflow-hidden">
     <!-- Fondo con gradiente -->
     <div
-      class="absolute inset-0 bg-gradient-to-br from-dv-primary/10 via-blue-500/10 to-dv-secondary/10 -z-10"
+      class="absolute inset-0 bg-blue-50 -z-10"
     >
     </div>
 
     <div class="container mx-auto px-6">
-      <div class="max-w-4xl mx-auto glass-card text-center scroll-reveal">
-        <div class="text-5xl mb-6 float-element">🚀</div>
+      <div class="max-w-4xl mx-auto glass-card text-center">
         <h2 class="text-3xl md:text-5xl font-bold text-dv-primary mb-6">
           ¿Listo para comenzar?
         </h2>
@@ -535,7 +326,7 @@ import HeroSlider from "../components/HeroSlider.astro";
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <a
             href="/contacto"
-            class="btn-primary inline-flex items-center justify-center gap-3 text-lg px-10 py-5 btn-magnetic ripple-effect"
+            class="btn-primary inline-flex items-center justify-center gap-3 text-lg px-10 py-5"
           >
             <svg
               class="w-6 h-6"
@@ -554,7 +345,7 @@ import HeroSlider from "../components/HeroSlider.astro";
           </a>
           <a
             href="tel:+56944344320"
-            class="px-10 py-5 rounded-xl font-semibold glass hover:bg-white/90 text-dv-primary transition-all duration-300 hover:scale-105 hover:shadow-2xl inline-flex items-center justify-center gap-3 text-lg"
+            class="px-10 py-5 rounded-xl font-semibold glass hover:bg-white/90 text-dv-primary transition-all duration-300 hover:shadow-md inline-flex items-center justify-center gap-3 text-lg"
           >
             <svg
               class="w-6 h-6"
@@ -582,7 +373,7 @@ import HeroSlider from "../components/HeroSlider.astro";
               href="tel:+56944344320"
               class="flex items-center gap-2 text-dv-primary hover:text-dv-secondary transition-colors"
             >
-              <span>📞</span>
+              <Icon name="phone" class="w-4 h-4" />
               <span>+56 9 4434 4320</span>
             </a>
             <a
@@ -590,7 +381,7 @@ import HeroSlider from "../components/HeroSlider.astro";
               target="_blank"
               class="flex items-center gap-2 text-dv-primary hover:text-dv-secondary transition-colors"
             >
-              <span>💬</span>
+              <Icon name="message-circle" class="w-4 h-4" />
               <span>WhatsApp</span>
             </a>
           </div>
