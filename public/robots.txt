@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://donvicente.cl/sitemap.xml
+Sitemap: https://www.serviciosintegralesdonvicente.cl/sitemap.xml
 
 # Disallow admin or private areas (if any in the future)
 # Disallow: /admin/
