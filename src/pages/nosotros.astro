@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/Icon.astro";
 ---
 
 <BaseLayout
@@ -8,33 +9,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 >
   <!-- Hero Section -->
   <section
-    class="relative overflow-hidden min-h-[60vh] flex items-center mb-20"
+    class="relative py-16 md:py-20 mb-20"
   >
-    <div
-      class="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-red-500/10 -z-10"
-    >
-    </div>
-    <div
-      class="absolute top-10 right-10 w-64 h-64 bg-blue-400/20 rounded-full blur-3xl -z-10"
-    >
-    </div>
-    <div
-      class="absolute bottom-10 left-10 w-80 h-80 bg-red-400/20 rounded-full blur-3xl -z-10"
-    >
-    </div>
 
     <div class="container mx-auto px-6 text-center">
-      <div
-        class="inline-block glass px-6 py-3 rounded-full text-sm font-bold text-dv-primary mb-6 animate-fade-in"
-      >
-        <span
-          class="inline-block w-2 h-2 bg-dv-secondary rounded-full mr-2 animate-pulse"
-        ></span>
-        10 años de experiencia
-      </div>
-
       <h1
-        class="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-dv-primary via-blue-600 to-dv-primary mb-6 tracking-tight leading-tight animate-fade-in animate-delay-100"
+        class="text-4xl md:text-5xl font-bold text-dv-primary mb-6 tracking-tight leading-tight animate-fade-in animate-delay-100"
       >
         Construyendo Relaciones, Entregando Resultados
       </h1>
@@ -55,17 +35,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="max-w-6xl mx-auto">
         <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
           <!-- Imagen -->
-          <div class="scroll-reveal">
+          <div class="">
             <div class="relative group">
-              <div
-                class="absolute -inset-4 bg-gradient-to-r from-dv-primary/20 to-dv-secondary/20 rounded-3xl blur-2xl"
-              >
-              </div>
-              <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+              <div class="relative rounded-3xl overflow-hidden shadow-md">
                 <img
                   src="/images/industrial.webp"
                   alt="Don Vicente - Empresa de servicios en Aysén"
-                  class="w-full h-[600px] object-cover transition-transform duration-500 group-hover:scale-105"
+                  class="w-full h-[600px] object-cover transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
@@ -73,11 +49,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
 
           <!-- Contenido -->
-          <div class="scroll-reveal" style="animation-delay: 0.1s;">
+          <div class="" style="animation-delay: 0.1s;">
             <div
               class="inline-flex items-center gap-2 bg-dv-primary/10 px-4 py-2 rounded-full mb-6"
             >
-              <span class="text-3xl">🏔️</span>
+              <Icon name="mountain-snow" class="w-5 h-5 text-dv-primary" />
               <span class="text-sm font-bold text-dv-primary"
                 >Desde Aysén para Chile</span
               >
@@ -102,7 +78,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               </p>
 
               <div
-                class="bg-gradient-to-r from-dv-primary/10 to-dv-secondary/10 border-l-4 border-dv-primary p-6 rounded-r-xl my-6"
+                class="bg-blue-50 border-l-4 border-dv-primary p-6 rounded-r-xl my-6"
               >
                 <p class="font-semibold text-dv-primary text-lg">
                   10 años de trayectoria, nos hemos consolidado como un
@@ -126,13 +102,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
           <div class="relative">
             <div
-              class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-dv-primary via-blue-400 to-dv-secondary"
+              class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-slate-300"
             >
             </div>
 
             <div class="space-y-12">
               <!-- Hito 1 -->
-              <div class="relative scroll-reveal">
+              <div class="relative">
                 <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
                   <div class="md:text-right mb-4 md:mb-0">
                     <div class="glass-card inline-block">
@@ -152,14 +128,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                   <div class="hidden md:block"></div>
                 </div>
                 <div
-                  class="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-dv-primary rounded-full border-4 border-white shadow-lg"
+                  class="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-dv-primary rounded-full border-4 border-white shadow-sm"
                 >
                 </div>
               </div>
 
               <!-- Hito 2 -->
               <div
-                class="relative scroll-reveal"
+                class="relative"
                 style="animation-delay: 0.1s;"
               >
                 <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
@@ -179,14 +155,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                   </div>
                 </div>
                 <div
-                  class="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-blue-500 rounded-full border-4 border-white shadow-lg"
+                  class="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-blue-500 rounded-full border-4 border-white shadow-sm"
                 >
                 </div>
               </div>
 
               <!-- Hito 3 -->
               <div
-                class="relative scroll-reveal"
+                class="relative"
                 style="animation-delay: 0.2s;"
               >
                 <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
@@ -207,14 +183,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                   <div class="hidden md:block"></div>
                 </div>
                 <div
-                  class="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-green-500 rounded-full border-4 border-white shadow-lg"
+                  class="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-green-500 rounded-full border-4 border-white shadow-sm"
                 >
                 </div>
               </div>
 
               <!-- Hito 4 -->
               <div
-                class="relative scroll-reveal"
+                class="relative"
                 style="animation-delay: 0.3s;"
               >
                 <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
@@ -234,7 +210,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                   </div>
                 </div>
                 <div
-                  class="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-dv-secondary rounded-full border-4 border-white shadow-lg animate-pulse"
+                  class="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-dv-secondary rounded-full border-4 border-white shadow-sm"
                 >
                 </div>
               </div>
@@ -245,82 +221,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <!-- Misión, Visión y Valores -->
-  <section class="py-20 bg-gradient-to-b from-transparent to-blue-50/30">
-    <div class="container mx-auto px-6">
-      <h2 class="section-title mb-4">Nuestros Pilares</h2>
-      <p class="section-subtitle mb-16">
-        Los principios que guían nuestro trabajo diario
-      </p>
-
-      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <div class="glass-card text-center group scroll-reveal">
-          <div
-            class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-5xl shadow-lg group-hover:scale-110 transition-transform"
-          >
-            🎯
-          </div>
-          <h3 class="text-2xl font-bold text-dv-primary mb-4">Misión</h3>
-          <p class="text-gray-700 leading-relaxed">
-            Brindar servicios de <strong>excelencia</strong> que superen las expectativas
-            de nuestros clientes, contribuyendo al desarrollo sostenible de nuestra
-            región mediante soluciones profesionales, confiables y adaptadas a cada
-            necesidad.
-          </p>
-        </div>
-
-        <div
-          class="glass-card text-center group scroll-reveal"
-          style="animation-delay: 0.1s;"
-        >
-          <div
-            class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center text-5xl shadow-lg group-hover:scale-110 transition-transform"
-          >
-            👁️
-          </div>
-          <h3 class="text-2xl font-bold text-dv-primary mb-4">Visión</h3>
-          <p class="text-gray-700 leading-relaxed">
-            Ser la empresa <strong>líder y referente</strong> en servicios integrales
-            en el sur de Chile, reconocida por nuestra calidad, compromiso social
-            y capacidad de innovación en cada proyecto que emprendemos.
-          </p>
-        </div>
-
-        <div
-          class="glass-card text-center group scroll-reveal"
-          style="animation-delay: 0.2s;"
-        >
-          <div
-            class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center text-5xl shadow-lg group-hover:scale-110 transition-transform"
-          >
-            ⭐
-          </div>
-          <h3 class="text-2xl font-bold text-dv-primary mb-4">Valores</h3>
-          <ul class="text-left text-gray-700 space-y-2">
-            <li class="flex items-center gap-2">
-              <span class="text-dv-secondary">✓</span>
-              <strong>Confianza</strong> en cada compromiso
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="text-dv-secondary">✓</span>
-              <strong>Responsabilidad</strong> social y ambiental
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="text-dv-secondary">✓</span>
-              <strong>Compromiso</strong> a largo plazo
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="text-dv-secondary">✓</span>
-              <strong>Excelencia</strong> en cada detalle
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Nuestro Equipo -->
-  <section class="py-20 bg-gradient-to-b from-transparent to-blue-50/30">
+  <section class="py-20">
     <div class="container mx-auto px-6">
       <h2 class="section-title mb-4">Nuestro Equipo</h2>
       <p class="section-subtitle mb-16">
@@ -331,10 +233,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto mb-16"
       >
         <div
-          class="glass-card text-center scroll-reveal group hover:scale-105 transition-transform"
+          class="glass-card text-center group transition-transform"
         >
           <div
-            class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-dv-primary to-blue-600 rounded-full flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-shadow"
+            class="w-24 h-24 mx-auto mb-4 bg-dv-primary rounded-full flex items-center justify-center shadow-md group-hover:shadow-md transition-shadow"
           >
             <svg
               class="w-12 h-12 text-white"
@@ -351,7 +253,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </svg>
           </div>
           <div
-            class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-dv-primary to-blue-600 mb-2"
+            class="text-4xl font-extrabold text-dv-primary mb-2"
           >
             50+
           </div>
@@ -360,11 +262,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
 
         <div
-          class="glass-card text-center scroll-reveal group hover:scale-105 transition-transform"
+          class="glass-card text-center group transition-transform"
           style="animation-delay: 0.1s;"
         >
           <div
-            class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-shadow"
+            class="w-24 h-24 mx-auto mb-4 bg-dv-primary rounded-full flex items-center justify-center shadow-md group-hover:shadow-md transition-shadow"
           >
             <svg
               class="w-12 h-12 text-white"
@@ -380,7 +282,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </svg>
           </div>
           <div
-            class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-700 mb-2"
+            class="text-4xl font-extrabold text-dv-primary mb-2"
           >
             100%
           </div>
@@ -389,11 +291,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
 
         <div
-          class="glass-card text-center scroll-reveal group hover:scale-105 transition-transform"
+          class="glass-card text-center group transition-transform"
           style="animation-delay: 0.2s;"
         >
           <div
-            class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-full flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-shadow"
+            class="w-24 h-24 mx-auto mb-4 bg-dv-primary rounded-full flex items-center justify-center shadow-md group-hover:shadow-md transition-shadow"
           >
             <svg
               class="w-12 h-12 text-white"
@@ -409,7 +311,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </svg>
           </div>
           <div
-            class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-600 mb-2"
+            class="text-4xl font-extrabold text-dv-primary mb-2"
           >
             24/7
           </div>
@@ -418,11 +320,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
 
         <div
-          class="glass-card text-center scroll-reveal group hover:scale-105 transition-transform"
+          class="glass-card text-center group transition-transform"
           style="animation-delay: 0.3s;"
         >
           <div
-            class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-dv-secondary to-red-600 rounded-full flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-shadow"
+            class="w-24 h-24 mx-auto mb-4 bg-dv-primary rounded-full flex items-center justify-center shadow-md group-hover:shadow-md transition-shadow"
           >
             <svg
               class="w-12 h-12 text-white"
@@ -439,7 +341,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </svg>
           </div>
           <div
-            class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-dv-secondary to-red-600 mb-2"
+            class="text-4xl font-extrabold text-dv-primary mb-2"
           >
             10+
           </div>
@@ -460,13 +362,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <div class="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
         <div
-          class="glass-card overflow-hidden group scroll-reveal w-full md:w-[calc(50%-1rem)]"
+          class="glass-card overflow-hidden group w-full md:w-[calc(50%-1rem)]"
         >
           <div class="relative overflow-hidden aspect-[4/3]">
             <img
               src="/images/plagas.webp"
               alt="Equipo trabajando en control de plagas"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              class="w-full h-full object-cover transition-transform duration-500"
               loading="lazy"
             />
             <div
@@ -480,14 +382,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
 
         <div
-          class="glass-card overflow-hidden group scroll-reveal w-full md:w-[calc(50%-1rem)]"
+          class="glass-card overflow-hidden group w-full md:w-[calc(50%-1rem)]"
           style="animation-delay: 0.1s;"
         >
           <div class="relative overflow-hidden aspect-[4/3]">
             <img
               src="/images/transportecarga.webp"
               alt="Personal en planta industrial"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              class="w-full h-full object-cover transition-transform duration-500"
               loading="lazy"
             />
             <div
@@ -501,14 +403,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
 
         <div
-          class="glass-card overflow-hidden group scroll-reveal w-full md:w-[calc(50%-1rem)]"
+          class="glass-card overflow-hidden group w-full md:w-[calc(50%-1rem)]"
           style="animation-delay: 0.2s;"
         >
           <div class="relative overflow-hidden aspect-[4/3]">
             <img
               src="/images/operariosindustriales.webp"
               alt="Servicios profesionales certificados"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              class="w-full h-full object-cover transition-transform duration-500"
               loading="lazy"
             />
             <div
@@ -525,12 +427,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </section>
 
   <!-- Compromiso con la Región -->
-  <section class="py-20 bg-gradient-to-b from-blue-50/30 to-transparent">
+  <section class="py-20">
     <div class="container mx-auto px-6">
       <div class="max-w-4xl mx-auto">
-        <div class="glass-card scroll-reveal">
+        <div class="glass-card">
           <div class="text-center mb-8">
-            <div class="text-6xl mb-4">🌊</div>
             <h2 class="text-3xl md:text-4xl font-bold text-dv-primary mb-4">
               Compromiso con Aysén
             </h2>
@@ -564,7 +465,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             class="grid md:grid-cols-3 gap-6 mt-10 pt-8 border-t border-gray-200"
           >
             <div class="text-center">
-              <div class="text-3xl mb-2">🏭</div>
+              <Icon name="factory" class="w-8 h-8 mx-auto mb-2 text-dv-primary" />
               <h3 class="font-semibold text-dv-primary mb-1">
                 Sector Industrial
               </h3>
@@ -573,14 +474,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               </p>
             </div>
             <div class="text-center">
-              <div class="text-3xl mb-2">🏥</div>
+              <Icon name="landmark" class="w-8 h-8 mx-auto mb-2 text-dv-primary" />
               <h3 class="font-semibold text-dv-primary mb-1">Sector Público</h3>
               <p class="text-sm text-gray-700">
                 Servicios a municipios y salud
               </p>
             </div>
             <div class="text-center">
-              <div class="text-3xl mb-2">🏢</div>
+              <Icon name="building-2" class="w-8 h-8 mx-auto mb-2 text-dv-primary" />
               <h3 class="font-semibold text-dv-primary mb-1">Sector Privado</h3>
               <p class="text-sm text-gray-700">
                 Soluciones para empresas de todo rubro
@@ -601,24 +502,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </p>
 
       <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-        <div class="glass-card text-center scroll-reveal">
-          <div class="text-4xl mb-3">🛡️</div>
+        <div class="glass-card text-center">
+          <Icon name="shield-check" class="w-9 h-9 mx-auto mb-3 text-dv-primary" />
           <h3 class="font-bold text-dv-primary mb-2">Seguridad</h3>
           <p class="text-sm text-gray-700">Protocolos de seguridad laboral</p>
         </div>
         <div
-          class="glass-card text-center scroll-reveal"
+          class="glass-card text-center"
           style="animation-delay: 0.1s;"
         >
-          <div class="text-4xl mb-3">🌱</div>
+          <Icon name="leaf" class="w-9 h-9 mx-auto mb-3 text-dv-primary" />
           <h3 class="font-bold text-dv-primary mb-2">Medio Ambiente</h3>
           <p class="text-sm text-gray-700">Prácticas sustentables</p>
         </div>
         <div
-          class="glass-card text-center scroll-reveal"
+          class="glass-card text-center"
           style="animation-delay: 0.2s;"
         >
-          <div class="text-4xl mb-3">📋</div>
+          <Icon name="clipboard-list" class="w-9 h-9 mx-auto mb-3 text-dv-primary" />
           <h3 class="font-bold text-dv-primary mb-2">Normativa</h3>
           <p class="text-sm text-gray-700">Cumplimiento legal vigente</p>
         </div>
@@ -627,9 +528,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </section>
 
   <!-- CTA Final -->
-  <section class="py-16 bg-gradient-to-b from-transparent to-blue-50/30">
+  <section class="py-16">
     <div class="container mx-auto px-6">
-      <div class="glass-card text-center max-w-3xl mx-auto scroll-reveal">
+      <div class="glass-card text-center max-w-3xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold text-dv-primary mb-4">
           ¿Quieres ser parte de nuestra historia?
         </h2>
@@ -659,7 +560,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </a>
           <a
             href="/servicios"
-            class="px-8 py-4 rounded-xl font-semibold glass hover:bg-white/90 text-dv-primary transition-all duration-300 hover:scale-105 hover:shadow-2xl inline-flex items-center justify-center gap-3"
+            class="px-8 py-4 rounded-xl font-semibold glass hover:bg-white/90 text-dv-primary transition-all duration-300 hover:shadow-md inline-flex items-center justify-center gap-3"
           >
             <svg
               class="w-5 h-5"
