@@ -3,7 +3,7 @@
   
   <!-- Página Principal -->
   <url>
-    <loc>https://donvicente.cl/</loc>
+    <loc>https://www.serviciosintegralesdonvicente.cl/</loc>
     <lastmod>2025-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
   
   <!-- Servicios -->
   <url>
-    <loc>https://donvicente.cl/servicios</loc>
+    <loc>https://www.serviciosintegralesdonvicente.cl/servicios/</loc>
     <lastmod>2025-12-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -19,7 +19,7 @@
   
   <!-- Nosotros -->
   <url>
-    <loc>https://donvicente.cl/nosotros</loc>
+    <loc>https://www.serviciosintegralesdonvicente.cl/nosotros/</loc>
     <lastmod>2025-12-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -27,7 +27,7 @@
   
   <!-- Clientes -->
   <url>
-    <loc>https://donvicente.cl/clientes</loc>
+    <loc>https://www.serviciosintegralesdonvicente.cl/clientes/</loc>
     <lastmod>2025-12-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -35,7 +35,7 @@
   
   <!-- FAQ -->
   <url>
-    <loc>https://donvicente.cl/faq</loc>
+    <loc>https://www.serviciosintegralesdonvicente.cl/faq/</loc>
     <lastmod>2025-12-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -43,7 +43,7 @@
   
   <!-- Contacto -->
   <url>
-    <loc>https://donvicente.cl/contacto</loc>
+    <loc>https://www.serviciosintegralesdonvicente.cl/contacto/</loc>
     <lastmod>2025-12-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
